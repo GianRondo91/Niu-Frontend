@@ -1,0 +1,11 @@
+@use '../../scss/utilities/variables' as variables;
+
+.header{
+    .header-left{}
+    .header-center{
+        .header-center-ul{
+            .header-center-ul-li{}
+        }
+    }
+    .header-right{}
+}

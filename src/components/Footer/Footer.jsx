@@ -2,8 +2,16 @@ import React from 'react';
 
 const Footer = () => {
     return(
-        <div>
-            Soy el footer
+        <div className="footer">
+            <div className="footer-logo">
+
+            </div>
+            <div className="footer-info">
+
+            </div>
+            <div className="footer-contact">
+                
+            </div>
         </div>
     )
 };

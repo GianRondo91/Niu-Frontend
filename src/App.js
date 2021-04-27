@@ -1,5 +1,5 @@
-import {BrowserRouter, Switch, Route, Router} from 'react-router-dom';
-import './App.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import './App.scss';
 import Home from './views/Home/Home';
 
 function App() {

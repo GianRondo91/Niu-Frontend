@@ -1,0 +1,13 @@
+/*BASE*/
+@forward './scss/base/reset.scss';
+
+/*COMPONENTS*/
+@forward './components/Header/Header.scss';
+@forward './components/Footer/Footer.scss';
+
+/*VIEWS*/
+@forward './views/Home/Home.scss';
+@forward './views/Contact/Contact.scss';
+
+/*RESPONSIVE DESIGN*/
+@forward './scss/media-query/responsive-design.scss';
