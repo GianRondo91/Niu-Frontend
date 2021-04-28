@@ -1,11 +1,56 @@
-@use '../../scss/utilities/variables' as variables;
+@use '../../scss/utilities/variables' as var;
+@use '../../scss/utilities/mixings' as mix;
 
-.header{
-    .header-left{}
-    .header-center{
-        .header-center-ul{
-            .header-center-ul-li{}
+.header {
+    // background-color: rosybrown;
+    height: nth(var.$hundreds, 1);
+    @include mix.center(nth(var.$medias, 4));
+    justify-content: space-around;
+    display: flex;
+    margin-top: var.$mp-i;
+    .header-left {
+        width: var.$per-2;
+        .icon-align {
+            position: relative;
+            top: var.$size-s;
+            cursor: pointer;
         }
     }
-    .header-right{}
+    .header-center {
+        width: var.$per-6;
+        text-align: center;
+        .header-center-ul {
+            display: inline-flex;
+            .header-center-ul-li {
+                margin-right: var.$mp-f;
+                margin-left: var.$mp-f;
+                cursor: pointer;
+                height: var.$per-10;
+            }
+            .menu-logo {
+                background-image: url('https://user-images.githubusercontent.com/56218293/116420709-881d6a80-a83e-11eb-9988-14699833522d.png');
+                background-size: var.$per-10;
+                width: var.$mp-nn;
+                height: var.$mp-nn;
+                margin-left: var.$mp-n;
+                margin-right: var.$mp-n;
+            }
+            .ul-li {
+                position: relative;
+                top: var.$size-s;
+            }
+        }
+    }
+    .header-right {
+        width: var.$per-2;
+        .icon-align {
+            position: relative;
+            top: var.$size-s;
+            cursor: pointer;
+            float: right;
+        }
+        .icon-align-left {
+            margin-right: var.$mp-j;
+        }
+    }
 }

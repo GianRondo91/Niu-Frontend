@@ -1,29 +1,29 @@
 import React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUser, faShoppingCart, faBars} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
-    return(
+    return (
         <div className="header">
             <div className="header-left">
-                <FontAwesomeIcon icon={faBars} />
+                <span className="icon-align"><FontAwesomeIcon icon={faBars} /></span>
             </div>
 
             <div className="header-center">
                 <ul className="header-center-ul">
-                    <li className="header-center-ul-li">Home</li>
-                    <li className="header-center-ul-li">Carta</li>
-                    <li className="header-center-ul-li">Delivery</li>
-                    <li className="header-center-ul-li menu-logo">LOGO</li>
-                    <li className="header-center-ul-li">Cocina</li>
-                    <li className="header-center-ul-li">Equipo</li>
-                    <li className="header-center-ul-li">Contacto</li>
+                    <li className="header-center-ul-li ul-li">Home</li>
+                    <li className="header-center-ul-li ul-li">Carta</li>
+                    <li className="header-center-ul-li ul-li">Delivery</li>
+                    <li className="header-center-ul-li menu-logo"></li>
+                    <li className="header-center-ul-li ul-li">Cocina</li>
+                    <li className="header-center-ul-li ul-li">Equipo</li>
+                    <li className="header-center-ul-li ul-li">Contacto</li>
                 </ul>
             </div>
 
             <div className="header-right">
-                <FontAwesomeIcon icon={faUser} />
-                <FontAwesomeIcon icon={faShoppingCart} />
+                <span className="icon-align"><FontAwesomeIcon icon={faUser} /></span>
+                <span className="icon-align icon-align-left"><FontAwesomeIcon icon={faShoppingCart} /></span>
             </div>
         </div>
     )
