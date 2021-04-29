@@ -11,13 +11,13 @@ const Header = () => {
 
             <div className="header-center">
                 <ul className="header-center-ul">
-                    <li className="header-center-ul-li ul-li">Home</li>
-                    <li className="header-center-ul-li ul-li">Carta</li>
-                    <li className="header-center-ul-li ul-li">Delivery</li>
+                    <li className="header-center-ul-li ul-li ul-li-left">Home</li>
+                    <li className="header-center-ul-li ul-li ul-li-left">Carta</li>
+                    <li className="header-center-ul-li ul-li ul-li-left">Delivery</li>
                     <li className="header-center-ul-li menu-logo"></li>
-                    <li className="header-center-ul-li ul-li">Cocina</li>
-                    <li className="header-center-ul-li ul-li">Equipo</li>
-                    <li className="header-center-ul-li ul-li">Contacto</li>
+                    <li className="header-center-ul-li ul-li ul-li-right">Cocina</li>
+                    <li className="header-center-ul-li ul-li ul-li-right">Equipo</li>
+                    <li className="header-center-ul-li ul-li ul-li-right">Contacto</li>
                 </ul>
             </div>
 

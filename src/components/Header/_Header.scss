@@ -1,15 +1,16 @@
 @use '../../scss/utilities/variables' as var;
 @use '../../scss/utilities/mixings' as mix;
 
+
 .header {
-    // background-color: rosybrown;
+    @include mix.center(nth(var.$medias, 3));
     height: nth(var.$hundreds, 1);
-    @include mix.center(nth(var.$medias, 4));
     justify-content: space-around;
     display: flex;
     margin-top: var.$mp-i;
     .header-left {
         width: var.$per-2;
+        margin-left: var.$mp-f;
         .icon-align {
             position: relative;
             top: var.$size-s;
@@ -38,11 +39,14 @@
             .ul-li {
                 position: relative;
                 top: var.$size-s;
+                font-size: var.$size-k;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
         }
     }
     .header-right {
         width: var.$per-2;
+        margin-right: var.$mp-f;
         .icon-align {
             position: relative;
             top: var.$size-s;
@@ -51,6 +55,216 @@
         }
         .icon-align-left {
             margin-right: var.$mp-j;
+        }
+    }
+}
+
+
+/*----- Escritorio -----*/
+
+@media (min-width: 1199.98px) and (max-width: 1399px) {
+    // body {
+    //     background: lightblue;
+    // }
+
+    
+    
+}
+
+
+/*----- Tablet -----*/
+
+
+/*Portrait*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
+    // body {
+    //     background: orange;
+    // }
+    .header {
+        @include mix.center(nth(var.$hundreds, 5)+var.$mp-l);
+        .header-left {
+            width: 5%;
+            margin-left: 0px;
+            .icon-align {}
+        }
+        .header-center {
+            width: 85%;
+            .header-center-ul {
+                .header-center-ul-li {}
+                .menu-logo {
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 8px;
+                    margin-left: 8px;
+                }
+                .ul-li {
+                    font-size: 16px;
+                    margin-right: 8px;
+                    margin-left: 8px;
+                }
+            }
+        }
+        .header-right {
+            width: 10%;
+            margin-right: 0px;
+            font-size: 13px;
+            .icon-align {}
+            .icon-align-left {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+/*landscape*/
+
+@media (min-width: 991.98px) and (max-width: 1199.98px)and (orientation:landscape) {
+    // body {
+    //     background: blue;
+    // }
+    .header {
+        @include mix.center(nth(var.$hundreds, 9));
+        .header-left {
+            width: 10%;
+            .icon-align {}
+        }
+        .header-center {
+            width: 80%;
+            .header-center-ul {
+                .header-center-ul-li {}
+                .menu-logo {
+                    width: 60px;
+                    height: 60px;
+                }
+                .ul-li {
+                    font-size: 16px;
+                }
+            }
+        }
+        .header-right {
+            width: 10%;
+            .icon-align {}
+            .icon-align-left {}
+        }
+    }
+}
+
+
+/*----- movil -----*/
+
+
+/*Portrait*/
+
+
+/*Default*/
+
+@media (max-width: 575.98px)and (orientation:portrait) {
+    // body {
+    //     background: green;
+    // }
+    .header {
+        width: 350px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 40px;
+        .header-left {
+            width: 10%;
+            bottom: 38px;
+            position: relative;
+            left: 460px;
+            top: -4px;
+
+            .icon-align {}
+        }
+        .header-center {
+            width: 80%;
+            position: relative;
+            top: 25px;
+            align-items: center;
+            display: contents;
+            .header-center-ul {
+                display: flex;
+                .header-center-ul-li {
+                }
+                .menu-logo {
+                    width: 60px;
+                    height: 60px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    position: relative;
+                    bottom: 6px;
+                    right: 125px;
+                }
+                .ul-li {
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                .ul-li-left{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    left: 170px;
+                    top: -42px;
+                }
+                .ul-li-right{
+                    position: relative;
+                    top: 32px;
+                    right: 100px;
+                }
+            }
+        }
+        .header-right {
+            width: 10%;
+            bottom: 40px;
+            position: relative;
+            display: flex;
+            right: 70px;
+            .icon-align {}
+            .icon-align-left {
+                margin-right: 0px;
+                padding-left: 8px;
+            }
+        }
+    }
+}
+
+
+/*landscape*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+    // body {
+    //     background: pink;
+    // }
+    .header {
+        width: 630px;
+        .header-left {
+            width: 10%;
+            .icon-align {}
+        }
+        .header-center {
+            width: 80%;
+            .header-center-ul {
+                .header-center-ul-li {}
+                .menu-logo {
+                    width: 60px;
+                    height: 60px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .ul-li {
+                    font-size: 16px;
+                }
+            }
+        }
+        .header-right {
+            width: 10%;
+            .icon-align {}
+            .icon-align-left {
+                margin-right: 8px;
+            }
         }
     }
 }

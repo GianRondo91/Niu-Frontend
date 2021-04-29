@@ -59,7 +59,11 @@ $hundreds: (100px, 200px, 300px, 400px, 500px, 600px, 700px, 800px, 900px, 100px
 
 /*Media-query*/
 
-$medias: (375px, 1007px, 1200px, 1440px);
+$medias: (375px, 1007px, 1200px, 1400px, 1440px);
+
+/*Font-weight*/
+
+$fw: (100, 200, 300, 400, 500, 600, 700, 800, 900);
 
 /*Porcentjes*/
 
@@ -77,6 +81,7 @@ $per-10: 100%;
 
 /*Colours*/
 
+$white: #f7f7ee;
 $black: #222831;
 $brown: #E3D0B9;
 $grey: (#C7CFB7, #9CADA4, #9DAB86);
