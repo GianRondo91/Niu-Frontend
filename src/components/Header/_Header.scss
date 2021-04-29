@@ -84,8 +84,8 @@
     .header {
         @include mix.center(nth(var.$hundreds, 5)+var.$mp-l);
         .header-left {
-            width: 5%;
-            margin-left: 0px;
+            width: var.$per-1 / 2;
+            margin-left: var.$mp-a;
             .icon-align {}
         }
         .header-center {
@@ -93,25 +93,25 @@
             .header-center-ul {
                 .header-center-ul-li {}
                 .menu-logo {
-                    width: 50px;
-                    height: 50px;
-                    margin-right: 8px;
-                    margin-left: 8px;
+                    width: var.$hundreds / 2;
+                    height: var.$hundreds / 2;
+                    margin-right: var.$mp-e;
+                    margin-left: var.$mp-e;
                 }
                 .ul-li {
-                    font-size: 16px;
-                    margin-right: 8px;
-                    margin-left: 8px;
+                    font-size: var.$size-j;
+                    margin-right: var.$mp-e;
+                    margin-left: var.$mp-e;
                 }
             }
         }
         .header-right {
-            width: 10%;
-            margin-right: 0px;
-            font-size: 13px;
+            width: var.$per-1;
+            margin-right: var.$mp-a;
+            font-size: var.$mp-g;
             .icon-align {}
             .icon-align-left {
-                margin-right: 10px;
+                margin-right: var.$mp-f;
             }
         }
     }
@@ -127,24 +127,24 @@
     .header {
         @include mix.center(nth(var.$hundreds, 9));
         .header-left {
-            width: 10%;
+            width: var.$per-1;
             .icon-align {}
         }
         .header-center {
-            width: 80%;
+            width: var.$per-8;
             .header-center-ul {
                 .header-center-ul-li {}
                 .menu-logo {
-                    width: 60px;
-                    height: 60px;
+                    width: var.$mp-n;
+                    height: var.$mp-n;
                 }
                 .ul-li {
-                    font-size: 16px;
+                    font-size: var.$mp-h;
                 }
             }
         }
         .header-right {
-            width: 10%;
+            width: var.$per-1;
             .icon-align {}
             .icon-align-left {}
         }
@@ -165,23 +165,23 @@
     //     background: green;
     // }
     .header {
-        width: 350px;
+        width: var.$mp-u + var.$size-p;
         margin-right: auto;
         margin-left: auto;
-        margin-top: 40px;
+        margin-top: var.$mp-l;
         .header-left {
-            width: 10%;
-            bottom: 38px;
+            width: var.$per-1;
+            bottom: var.$mp-l;
             position: relative;
-            left: 460px;
+            left: var.$mp-v;
             top: -4px;
 
             .icon-align {}
         }
         .header-center {
-            width: 80%;
+            width: var.$per-8;
             position: relative;
-            top: 25px;
+            top: var.$mp-j;
             align-items: center;
             display: contents;
             .header-center-ul {
@@ -189,43 +189,43 @@
                 .header-center-ul-li {
                 }
                 .menu-logo {
-                    width: 60px;
-                    height: 60px;
-                    margin-left: 0px;
-                    margin-right: 0px;
+                    width: var.$mp-n;
+                    height: var.$mp-n;
+                    margin-left: var.$mp-a;
+                    margin-right: var.$mp-a;
                     position: relative;
-                    bottom: 6px;
-                    right: 125px;
+                    bottom: var.$mp-d;
+                    right: var.$mp-p;
                 }
                 .ul-li {
-                    font-size: 16px;
-                    padding-bottom: 10px;
+                    font-size: var.$size-j;
+                    padding-bottom: var.$mp-f;
                 }
                 .ul-li-left{
                     position: relative;
                     display: flex;
                     align-items: center;
                     align-content: center;
-                    left: 170px;
+                    left: var.$mp-q + var.$mp-f;
                     top: -42px;
                 }
                 .ul-li-right{
                     position: relative;
-                    top: 32px;
-                    right: 100px;
+                    top: var.$mp-k;
+                    right: nth(var.$hundreds, 1);
                 }
             }
         }
         .header-right {
-            width: 10%;
-            bottom: 40px;
+            width: var.$per-1;
+            bottom: var.$mp-l;
             position: relative;
             display: flex;
-            right: 70px;
+            right: var.$mp-nn - var.$mp-f;
             .icon-align {}
             .icon-align-left {
-                margin-right: 0px;
-                padding-left: 8px;
+                margin-right: var.$mp-a;
+                padding-left: var.$mp-e;
             }
         }
     }
@@ -239,31 +239,31 @@
     //     background: pink;
     // }
     .header {
-        width: 630px;
+        width: var.$mp-w - var.$mp-f;
         .header-left {
-            width: 10%;
+            width: var.$per-1;
             .icon-align {}
         }
         .header-center {
-            width: 80%;
+            width: var.$per-8;
             .header-center-ul {
                 .header-center-ul-li {}
                 .menu-logo {
-                    width: 60px;
-                    height: 60px;
-                    margin-left: 10px;
-                    margin-right: 10px;
+                    width: var.$mp-n;
+                    height: var.$mp-n;
+                    margin-left: var.$mp-f;
+                    margin-right: var.$mp-f;
                 }
                 .ul-li {
-                    font-size: 16px;
+                    font-size: var.$size-j;
                 }
             }
         }
         .header-right {
-            width: 10%;
+            width: var.$per-1;
             .icon-align {}
             .icon-align-left {
-                margin-right: 8px;
+                margin-right: var.$mp-e;
             }
         }
     }
