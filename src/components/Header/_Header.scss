@@ -1,7 +1,6 @@
 @use '../../scss/utilities/variables' as var;
 @use '../../scss/utilities/mixings' as mix;
 
-
 .header {
     @include mix.center(nth(var.$medias, 3));
     height: nth(var.$hundreds, 1);
@@ -10,7 +9,7 @@
     margin-top: var.$mp-i;
     .header-left {
         width: var.$per-2;
-        margin-left: var.$mp-f;
+        margin-left: 30px;
         .icon-align {
             position: relative;
             top: var.$size-s;
@@ -46,7 +45,7 @@
     }
     .header-right {
         width: var.$per-2;
-        margin-right: var.$mp-f;
+        margin-right: 30px;
         .icon-align {
             position: relative;
             top: var.$size-s;
@@ -66,9 +65,6 @@
     // body {
     //     background: lightblue;
     // }
-
-    
-    
 }
 
 
@@ -81,17 +77,16 @@
     // body {
     //     background: orange;
     // }
+
     .header {
         @include mix.center(nth(var.$hundreds, 5)+var.$mp-l);
         .header-left {
             width: var.$per-1 / 2;
             margin-left: var.$mp-a;
-            .icon-align {}
         }
         .header-center {
             width: 85%;
             .header-center-ul {
-                .header-center-ul-li {}
                 .menu-logo {
                     width: var.$hundreds / 2;
                     height: var.$hundreds / 2;
@@ -100,8 +95,8 @@
                 }
                 .ul-li {
                     font-size: var.$size-j;
-                    margin-right: var.$mp-e;
-                    margin-left: var.$mp-e;
+                    margin-right: 5px;
+                    margin-left: 5px;
                 }
             }
         }
@@ -109,7 +104,6 @@
             width: var.$per-1;
             margin-right: var.$mp-a;
             font-size: var.$mp-g;
-            .icon-align {}
             .icon-align-left {
                 margin-right: var.$mp-f;
             }
@@ -128,25 +122,21 @@
         @include mix.center(nth(var.$hundreds, 9));
         .header-left {
             width: var.$per-1;
-            .icon-align {}
         }
         .header-center {
             width: var.$per-8;
             .header-center-ul {
-                .header-center-ul-li {}
                 .menu-logo {
                     width: var.$mp-n;
                     height: var.$mp-n;
                 }
                 .ul-li {
-                    font-size: var.$mp-h;
+                    font-size: 18px;
                 }
             }
         }
         .header-right {
             width: var.$per-1;
-            .icon-align {}
-            .icon-align-left {}
         }
     }
 }
@@ -164,6 +154,7 @@
     // body {
     //     background: green;
     // }
+
     .header {
         width: var.$mp-u + var.$size-p;
         margin-right: auto;
@@ -173,10 +164,8 @@
             width: var.$per-1;
             bottom: var.$mp-l;
             position: relative;
-            left: var.$mp-v;
+            left: 429px;
             top: -4px;
-
-            .icon-align {}
         }
         .header-center {
             width: var.$per-8;
@@ -186,8 +175,6 @@
             display: contents;
             .header-center-ul {
                 display: flex;
-                .header-center-ul-li {
-                }
                 .menu-logo {
                     width: var.$mp-n;
                     height: var.$mp-n;
@@ -195,7 +182,7 @@
                     margin-right: var.$mp-a;
                     position: relative;
                     bottom: var.$mp-d;
-                    right: var.$mp-p;
+                    right: 117px;
                 }
                 .ul-li {
                     font-size: var.$size-j;
@@ -221,8 +208,7 @@
             bottom: var.$mp-l;
             position: relative;
             display: flex;
-            right: var.$mp-nn - var.$mp-f;
-            .icon-align {}
+            right: 107px;
             .icon-align-left {
                 margin-right: var.$mp-a;
                 padding-left: var.$mp-e;
@@ -239,15 +225,13 @@
     //     background: pink;
     // }
     .header {
-        width: var.$mp-w - var.$mp-f;
+        width: 770px;
         .header-left {
             width: var.$per-1;
-            .icon-align {}
         }
         .header-center {
             width: var.$per-8;
             .header-center-ul {
-                .header-center-ul-li {}
                 .menu-logo {
                     width: var.$mp-n;
                     height: var.$mp-n;
@@ -255,15 +239,14 @@
                     margin-right: var.$mp-f;
                 }
                 .ul-li {
-                    font-size: var.$size-j;
+                    font-size: 18px;
                 }
             }
         }
         .header-right {
             width: var.$per-1;
-            .icon-align {}
             .icon-align-left {
-                margin-right: var.$mp-e;
+                margin-right: 12px;
             }
         }
     }
