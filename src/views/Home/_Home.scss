@@ -26,6 +26,7 @@
         }
     }
     .home-body-presentation {
+        
         @include mix.center(var.$per-10);
         margin-top: nth(var.$hundreds , 1);
         margin-bottom: nth(var.$hundreds , 1);

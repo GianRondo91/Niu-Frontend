@@ -1,8 +1,21 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
+import Login from '../Login/Login';
 
 const Header = () => {
+
+    // let state = {
+    //     open: false,
+    // };
+
+    // let openLogin = () => {
+    //     setState({ open: !state.open});
+    // }
+    // openRegister = () => {
+    //     this.setState({ open: !this.state.open});
+    // }
+
     return (
         <div className="header">
             <div className="header-left">
@@ -22,7 +35,7 @@ const Header = () => {
             </div>
 
             <div className="header-right">
-                <span className="icon-align"><FontAwesomeIcon icon={faUser} /></span>
+                <span className="icon-align"><Login/></span>
                 <span className="icon-align icon-align-left"><FontAwesomeIcon icon={faShoppingCart} /></span>
             </div>
         </div>
