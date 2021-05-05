@@ -1,0 +1,46 @@
+.menu {
+    background: cadetblue;
+    height: 700px;
+    .menu-title {
+        text-align: center;
+        font-size: 26px;
+        padding-top: 50px;
+    }
+    .menu-content {
+        background: white;
+        display: flex;
+        align-items: center;
+        height: 80%;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        justify-content: center;
+        
+        .menu-content-left {
+            width: 40%;
+        }
+        .Menu-content-right {
+            width: 40%;
+        }
+        .menu-content-left,
+        .Menu-content-right {
+            .food {
+                margin-bottom: 20px;
+                .food-title {
+                    display: flex;
+                    .food-title-food {}
+                    .food-title-price {
+                        position: relative;
+                        left: 240px;
+                    }
+                }
+                .food-description {
+                    margin-top: 6px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

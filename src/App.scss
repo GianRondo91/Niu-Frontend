@@ -8,6 +8,9 @@
 /*VIEWS*/
 @forward './views/Home/Home.scss';
 @forward './views/Contact/Contact.scss';
+@forward './views/Menu/Menu.scss';
+@forward './views/Team/Team.scss';
+@forward './views/Delivery/Delivery.scss';
 
 /*RESPONSIVE DESIGN*/
 @forward './scss/media-query/responsive-design.scss';

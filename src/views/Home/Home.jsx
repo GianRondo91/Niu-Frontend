@@ -1,8 +1,16 @@
 import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+
+import Menu from '../Menu/Menu';
+import Gallery from '../Gallery/Gallery';
+import Delivery from '../Delivery/Delivery';
+import Team from '../Team/Team';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
 
@@ -15,12 +23,20 @@ const Home = () => {
                     <div className="home-picture second-picture"></div>
                     <div className="home-picture third-picture"></div>
                 </div>
+
                 <div className="home-body-presentation">
                     <div className="picture-presentation"></div>
                     <div className="title-presentation">
                         COCINA INTERNACIONAL CAMBIANTE
                     </div>
                 </div>
+
+                <Menu />
+                <Gallery />
+                <Delivery />
+                <Team />
+                <Contact />
+
                 <div className="home-footer-hour">
                     <div className="hour-circle">
                         <div className="hour-content">
@@ -35,7 +51,6 @@ const Home = () => {
                                 <p>20:00 - 23:00</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

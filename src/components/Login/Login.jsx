@@ -1,139 +1,104 @@
-import React from 'react';
-// import React, { useEffect, useState } from 'react';
-// import { useHistory } from 'react-router-dom';
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import { validateField, validateFields, isValid } from '../../uti';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
-// import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label,FormFeedback } from 'reactstrap';
-// import {validateField, validateFields, isValid } from '../../uti';
+import { faUser, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label } from 'reactstrap';
 
 //Redux
-// import { LOGIN } from '../../redux/types/userType';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { LOGIN } from '../../redux/types/userType';
 
 const Login = (props) => {
 
-    // //Estado del Modal
-    // const [state, setState] = useState({
-    //     open: false
-    // });
+    const [state, setState] = useState({
+        open: false
+    });
 
-    // const [validationResult, setValidationResult] = useState({
-    //     validated: false,
-    //     name: null
-    // });
+    const [validationResult, setValidationResult] = useState({
+        validated: false,
+        name: null
+    });
 
-    // const toggleLogin = () => {
-    //     setState({ open: !state.open });
-    // }
+    const toggleLogin = () => {
+        setState({ open: !state.open });
+    }
 
-    // const history = useHistory();
+    const history = useHistory();
 
-    // //Hook -> Estado del Login
-    // const [dataLogin, setLogin] = useState({
-    //     email: '',
-    //     password: '',
-    //     userType: ''
-    // })
+    const [dataLogin, setLogin] = useState({
+        email: '',
+        password: '',
+        role: 'user'
+    })
 
-    // //Handlers
-    // const handleState = (event) => {
-    //     let data = { ...dataLogin, [event.target.name]: event.target.value };
-    //     setLogin(data);
+    const handleState = (event) => {
+        let data = { ...dataLogin, [event.target.name]: event.target.value };
 
-    //     setValidationResult({
-    //         ...validationResult,
-    //         [event.target.name]: validateField(event.target.name, event.target.value)
-    //     });
-    // };
+        setLogin(data);
 
-    // //Effect
-    // useEffect(() => {
-    //     console.log('Soy el componente montado de LOGIN!')
-    // }, []);
-
-    // const enter = async () => {
-    //     let validationResult = validateFields(dataLogin);
-
-    //     //Setea el estado de validación
-    //     setValidationResult({
-    //         ...validationResult,
-    //         validated: true
-    //     });
-
-    //     if(!isValid(validationResult)){
-    //         return;
-    //     };
-        
-    //     let role = dataLogin.userType === 'Patient' ? 'patients' : 'employees';
-           
-    //     try {
-
-    //         let result = await axios.post(`http://localhost:3001/${role}/login`, dataLogin);
-
-    //         result.data.userType = dataLogin.userType;
-
-    //         //Mandamos los datos de Login por Redux a store
-    //         props.dispatch({ type: LOGIN, payload: result.data });
+        setValidationResult({
+            ...validationResult,
+            [event.target.name]: validateField(event.target.name, event.target.value)
+        });
+    };
 
 
-    //         //Redireccionamos según el perfil elegido
-    //         return setTimeout(() => {
-    //             if (dataLogin.userType === 'Patient') {
-    //                 history.push('/patient');
-    //             } else if (dataLogin.userType === 'Employee') {
-    //                 history.push('/employee');
-    //             } else {
-    //                 alert('Eres un intruso!');
-    //             }
-    //         }, 200)
-                        
-    //     } catch (error) {
-    //         if(error.isAxiosError & error.response?.status === 403){
-    //             alert('El usuario no existe');  
-    //         }
-    //     }
-    // };
-    
+    const sendData = async () => {
+
+        let validationResult = validateFields(dataLogin);
+
+        setValidationResult({
+            ...validationResult,
+            validated: true
+        });
+
+
+        try {
+            let result = await axios.post('http://localhost:3001/user/login', dataLogin);
+            if (dataLogin.role === 'user') {
+                props.dispatch({ type: LOGIN, payload: result.data });
+                return setTimeout(() => { history.push('/home-user') }, 200);
+            } else if (dataLogin.role === 'admin') {
+                props.dispatch({ type: LOGIN, payload: result.data })
+                return setTimeout(() => { history.push('/home-admin') }, 200);
+            }
+
+        } catch (error) {
+            if (error.isAxiosError & error.response?.status === 403) {
+                alert('El usuario no existe');
+            }
+        }
+    }
     return (
-        //<div className="login" onClick={toggleLogin}>
-        <div className="login">
-            <div className="button-login">
-               <FontAwesomeIcon icon={faUser} />
+        <div className="login" >
+            <div className="button-login" onClick={toggleLogin}>
+                <FontAwesomeIcon icon={faUser} />
             </div>
 
-            {/* <Modal isOpen={StaticRange.open}>
+            <Modal isOpen={state.open}>
+                <Button color='secundary' onClick={toggleLogin}><FontAwesomeIcon icon={faTimesCircle} /></Button>
                 <ModalHeader>Iniciar Sesión</ModalHeader>
             </Modal>
             <ModalBody>
                 <FormGroup>
                     <Label form='email'>Email</Label>
                     <Input type='text' id='user' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
-                    <FormFeedback>{validationResult.email}</FormFeedback>
                 </FormGroup>
                 <FormGroup>
                     <Label form='password'>Contraseña</Label>
                     <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
-                    <FormFeedback>{validationResult.password}</FormFeedback>
-                </FormGroup>
-                <FormGroup>
-                    <Label for='select'>Rango</Label>
-                    <Input type='select' name='userType' id='selecrRango' onChange={handleState} valid={validationResult.validated && !validationResult.userType} invalid={validationResult.validated && validationResult.userType}>
-                        <option></option>
-                        <option>Patient</option>
-                        <option>Employee</option>
-                    </Input>
-                    <FormFeedback>{validationResult.userType}</FormFeedback>
                 </FormGroup>
             </ModalBody>
             <ModalFooter>
+                <Button color='primary' onClick={sendData}>Entrar</Button>
                 <Button color='primary' >GOOGLE LOGIN</Button>
-                <Button color='primary' onClick={enter}>Entrar</Button>
-                <Button color='secundary' onClick={toggleLogin}><FontAwesomeIcon icon={faTimesCircle} /></Button>
-            </ModalFooter> */}
+                <Button color='primary' >REGISTRARSE</Button>
+            </ModalFooter>
         </div>
     )
 };
 
-export default Login;
-// export default connect()(Login);
+export default connect()(Login);
