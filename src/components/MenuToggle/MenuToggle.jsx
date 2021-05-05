@@ -1,49 +1,59 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import classNames from "classnames";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimesCircle, faMobileAlt, faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+import 'bootstrap/dist/css/bootstrap.css';
 
 const MenuTogle = (props) => {
-    const {
-        buttonLabel,
-        className
-    } = props;
 
-    const [modal, setModal] = useState(false);
-    const [nestedModal, setNestedModal] = useState(false);
-    const [closeAll, setCloseAll] = useState(false);
+    let [state, setState] = useState({
+        isOpen: false
+    });
 
-    const toggle = () => setModal(!modal);
-    const toggleNested = () => {
-        setNestedModal(!nestedModal);
-        setCloseAll(false);
-    }
-    const toggleAll = () => {
-        setNestedModal(!nestedModal);
-        setCloseAll(true);
-    }
+    const toggleMenu = () => {
+        setState({ isOpen: !state.isOpen });        
+    };
 
     return (
-        <div>
-            <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
-            <Modal isOpen={modal} toggle={toggle} className={className}>
-                <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-                <ModalBody>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          <br />
-                    <Button color="success" onClick={toggleNested}>Show Nested Modal</Button>
-                    <Modal isOpen={nestedModal} toggle={toggleNested} onClosed={closeAll ? toggle : undefined}>
-                        <ModalHeader>Nested Modal title</ModalHeader>
-                        <ModalBody>Stuff and things</ModalBody>
-                        <ModalFooter>
-                            <Button color="primary" onClick={toggleNested}>Done</Button>{' '}
-                            <Button color="secondary" onClick={toggleAll}>All Done</Button>
-                        </ModalFooter>
-                    </Modal>
-                </ModalBody>
-                <ModalFooter>
-                    <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                    <Button color="secondary" onClick={toggle}>Cancel</Button>
-                </ModalFooter>
-            </Modal>
+        <div className="menu-toggle">
+            <div className="menu-toggle-icon" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
+            <div className={classNames("sidebar", { "is-open": state.isOpen})}>
+                <FontAwesomeIcon icon={faTimesCircle} onClick={toggleMenu} className="close-icon"/>
+                <Nav>
+                    <NavItem>
+                        <div className="logo">
+                            <p className="logo-name">niu</p>
+                            <p className="logo-name">bistro</p>
+                        </div>
+                    </NavItem>
+                    <NavItem>
+                        <FontAwesomeIcon icon={faMapMarkedAlt} />
+                        Avenida Antiguo, Av. del Regne de Valencia, 16, 46005 Valencia
+                    </NavItem>
+                    <NavItem>
+                        <FontAwesomeIcon icon={faMobileAlt} />
+                        <p className="phone">960 41 84 90</p>
+                    </NavItem>
+                    <NavItem>
+                        <FontAwesomeIcon icon={faMapMarkedAlt} />
+                        <div className="hour-days">
+                                <p>12:00 - 16:00</p>
+                                <p className="and">y</p>
+                                <p>20:00 - 23:00</p>
+                            </div>
+                    </NavItem>
+                    <NavItem>
+                        <FontAwesomeIcon icon={faInstagram} />
+                    </NavItem>
+                    {/* <NavItem>
+                        <NavLink href="#">Another Link</NavLink>
+                    </NavItem> */}
+                </Nav>
+            </div>
+            <div className="sidebar">&nbsp;</div>
         </div>
     );
 }

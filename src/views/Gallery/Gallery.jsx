@@ -3,8 +3,11 @@ import React from 'react';
 const Gallery = () => {
 
     return (
-        <div className="gallery">
-            
+        <div id="gallery" className="gallery">
+                <div className="gallery-caption">
+                    "La gran protagonista es la materia prima, nuestro cometido como cocineros debe ser no estropearlo"
+                    (Alain Chapel)
+                </div>
         </div>
     )
 };

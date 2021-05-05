@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { validateField, validateFields, isValid } from '../../uti';
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label } from 'reactstrap';
@@ -10,6 +12,8 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, L
 //Redux
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types/userType';
+
+import Register from '../Register/Register';
 
 const Login = (props) => {
 
@@ -81,22 +85,23 @@ const Login = (props) => {
             <Modal isOpen={state.open}>
                 <Button color='secundary' onClick={toggleLogin}><FontAwesomeIcon icon={faTimesCircle} /></Button>
                 <ModalHeader>Iniciar Sesión</ModalHeader>
+                <ModalBody>
+                    <FormGroup>
+                        <Label form='email'>Email</Label>
+                        <Input type='text' id='user' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label form='password'>Contraseña</Label>
+                        <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
+                    </FormGroup>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color='danger' ><Register/></Button>
+                    <Button color='info' >GOOGLE LOGIN</Button>
+                    <Button color='primary' onClick={sendData}>Entrar</Button>
+                </ModalFooter>
             </Modal>
-            <ModalBody>
-                <FormGroup>
-                    <Label form='email'>Email</Label>
-                    <Input type='text' id='user' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
-                </FormGroup>
-                <FormGroup>
-                    <Label form='password'>Contraseña</Label>
-                    <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
-                </FormGroup>
-            </ModalBody>
-            <ModalFooter>
-                <Button color='primary' onClick={sendData}>Entrar</Button>
-                <Button color='primary' >GOOGLE LOGIN</Button>
-                <Button color='primary' >REGISTRARSE</Button>
-            </ModalFooter>
+
         </div>
     )
 };

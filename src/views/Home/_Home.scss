@@ -13,16 +13,20 @@
             width: var.$per-4;
             height: nth(var.$hundreds , 5) + (nth(var.$hundreds , 1) / 2);
             margin: var.$mp-h;
-            background-size: cover;
+            // background-size: cover;
+            
+            background-attachment: fixed;
+            background-size: contain;
         }
         .first-picture{
-            background-image: url('https://user-images.githubusercontent.com/56218293/116575649-21b44d00-a90f-11eb-8c34-ea379f0cf60e.jpg');
+            background-image: url('../../images/plate1.jpg');
         }
         .second-picture{
-            background-image: url('https://user-images.githubusercontent.com/56218293/116575744-3c86c180-a90f-11eb-9628-ec5302ebee3a.jpg');
+            background-image: url('../../images/plate2.jpg');
         }
         .third-picture{
-            background-image: url('https://user-images.githubusercontent.com/56218293/116575835-50cabe80-a90f-11eb-8fe4-9fef1df3d483.jpg');
+            background-image: url('../../images/plate3.jpg');
+            background-position-x: -180px;
         }
     }
     .home-body-presentation {
@@ -33,11 +37,14 @@
         display: flex;
         align-items: center;
         .picture-presentation {
-            width: 460px;
-            height: nth(var.$hundreds , 3);
-            background-image: url('https://user-images.githubusercontent.com/56218293/116575961-693ad900-a90f-11eb-9e44-f73543317341.jpg');
-            background-size: cover;
+            width: 600px;
+            height: 600px;
+            background-image: url('../../images/plate4.jpg');
             margin-left: auto;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         .title-presentation {
             font-size: var.$size-p;

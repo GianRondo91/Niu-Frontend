@@ -4,11 +4,13 @@
 /*COMPONENTS*/
 @forward './components/Header/Header.scss';
 @forward './components/Footer/Footer.scss';
+@forward './components/MenuToggle/MenuToggle.scss';
 
 /*VIEWS*/
 @forward './views/Home/Home.scss';
 @forward './views/Contact/Contact.scss';
 @forward './views/Menu/Menu.scss';
+@forward './views/Gallery/Gallery.scss';
 @forward './views/Team/Team.scss';
 @forward './views/Delivery/Delivery.scss';
 
