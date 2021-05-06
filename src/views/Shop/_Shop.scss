@@ -1,0 +1,47 @@
+#shop-content{
+    max-width: 1150px;
+    margin: auto;
+    background-color: violet;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    .product{
+        width: 240px;
+        height: 200px;
+        //background-color: wheat;
+        margin: 33px 10px 105px 30px;
+        
+        .product-img{
+            background-image: url('../../images/food-ejm.jpeg');
+            width: 240px;
+            margin: auto;
+            height: 220px;
+            background-size: cover;
+        }
+        .product-name{
+            width: 236px;
+            position: relative;
+            bottom: 30px;
+            left: 5px;
+            color: antiquewhite;
+        }
+        .product-price{
+            position: relative;
+            bottom: 230px;
+            left: 14px;
+            color: white;
+            font-size: 20px;
+            width: 5px;
+        }
+        .product-button{
+            text-align: center;
+            background-color: lightblue;
+            border-radius: 5px;
+            padding: 4px;
+            cursor: pointer;
+            position: relative;
+            bottom: 30px;
+        }
+    }
+}
