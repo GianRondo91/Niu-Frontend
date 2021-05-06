@@ -8,7 +8,6 @@ import Header from '../../components/Header/Header';
 
 import Menu from '../Menu/Menu';
 import Gallery from '../Gallery/Gallery';
-import Delivery from '../Delivery/Delivery';
 import Team from '../Team/Team';
 import Contact from '../Contact/Contact';
 
@@ -33,7 +32,6 @@ const Home = () => {
 
                 <Menu />
                 <Gallery />
-                <Delivery />
                 <Team />
                 <Contact />
 

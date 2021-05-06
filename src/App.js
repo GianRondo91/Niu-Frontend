@@ -1,5 +1,6 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.scss';
+
 import AdminProfile from './views/AdminProfile/AdminProfile';
 import Home from './views/Home/Home';
 import Profile from './views/Profile/Profile';
