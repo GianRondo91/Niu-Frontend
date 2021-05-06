@@ -40,10 +40,10 @@ const MenuTogle = (props) => {
                     <NavItem>
                         <FontAwesomeIcon icon={faMapMarkedAlt} />
                         <div className="hour-days">
-                                <p>12:00 - 16:00</p>
-                                <p className="and">y</p>
-                                <p>20:00 - 23:00</p>
-                            </div>
+                            <p>12:00 - 16:00</p>
+                            <p className="and">y</p>
+                            <p>20:00 - 23:00</p>
+                        </div>
                     </NavItem>
                     <NavItem>
                         <FontAwesomeIcon icon={faInstagram} />

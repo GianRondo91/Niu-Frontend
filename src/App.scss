@@ -13,6 +13,12 @@
 @forward './views/Gallery/Gallery.scss';
 @forward './views/Team/Team.scss';
 @forward './views/Delivery/Delivery.scss';
+@forward './views/Profile/Profile.scss';
+@forward './views/ProfileContent/ProfileContent.scss';
+@forward './views/ProfileContent/UserData/UserData.scss';
+@forward './views/ProfileContent/Shop/Shop.scss';
+@forward './views/ProfileContent/OrderHistory/OrderHistory.scss';
+@forward './views/ProfileContent/Contact/Contact.scss';
 
 /*RESPONSIVE DESIGN*/
 @forward './scss/media-query/responsive-design.scss';
