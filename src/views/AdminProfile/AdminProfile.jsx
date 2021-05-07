@@ -17,24 +17,34 @@ const AdminProfile = () => {
                 <div className="profile-panel-center">
                     <a href="/"><div className="logo"> </div></a>
                     <div className="user-data button-panel-profile">
-                        <FontAwesomeIcon icon={faHome} />
-                        <Link to="/admin" className="link">Home</Link>
+                        <Link to="/admin" className="link">
+                            <FontAwesomeIcon icon={faHome} />
+                            <em className="link">Home</em>
+                        </Link>
                     </div>
                     <div className="user-data button-panel-profile">
-                        <FontAwesomeIcon icon={faUserEdit} />
-                        <Link to="/admin/edit" className="link">Perfil</Link>
+                        <Link to="/admin/edit" className="link">
+                            <FontAwesomeIcon icon={faUserEdit} />
+                            <em className="link">Perfil</em>
+                        </Link>
                     </div>
                     <div className="shop button-panel-profile">
-                        <FontAwesomeIcon icon={faUserPlus} />
-                        <Link to="/admin/addAdmin" className="link">Agregar Admin</Link>
+                        <Link to="/admin/addAdmin" className="link">
+                            <FontAwesomeIcon icon={faUserPlus} />
+                            <em className="link">Admin</em>
+                        </Link>
                     </div>
                     <div className="shop button-panel-profile">
-                        <FontAwesomeIcon icon={faUtensils} />
-                        <Link to="/admin/addProducts" className="link">Editar Platos</Link>
+                        <Link to="/admin/addProducts" className="link">
+                            <FontAwesomeIcon icon={faUtensils} />
+                            <em className="link">Platos</em>
+                        </Link>
                         </div>
                     <div className="order-history button-panel-profile">
-                        <FontAwesomeIcon icon={faReceipt} />
-                        <Link to="/admin/orders" className="link">Pedidos</Link>
+                        <Link to="/admin/orders" className="link">
+                            <FontAwesomeIcon icon={faReceipt} />
+                            <em className="link">Pedidos</em>
+                        </Link>
                         </div>
                     <div className="delete-acount">
                         <FontAwesomeIcon icon={faTrash} />

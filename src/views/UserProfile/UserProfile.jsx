@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link} from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUserEdit, faStore, faReceipt, faTrash, faSignOutAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
@@ -18,24 +18,34 @@ const UserProfile = () => {
                 <div className="profile-panel-center">
                     <a href="/"><div className="logo"> </div></a>
                     <div className="user-data button-panel-profile">
-                        <FontAwesomeIcon icon={faHome} />
-                        <Link to="/user" className="link">Home</Link>
+                        <Link to="/user" className="link">
+                            <FontAwesomeIcon icon={faHome} />
+                            <em className="link">Home</em>    
+                        </Link>
                     </div>
                     <div className="user-data button-panel-profile">
-                        <FontAwesomeIcon icon={faUserEdit} />
-                        <Link to="/user/edit" className="link">Perfil</Link>
+                        <Link to="/user/edit" className="link">
+                            <FontAwesomeIcon icon={faUserEdit} />
+                            <em className="link">Perfil</em>
+                        </Link>
                     </div>
                     <div className="shop button-panel-profile">
-                        <FontAwesomeIcon icon={faStore} />
-                        <Link to="/user/shop" className="link">Tienda</Link>
+                        <Link to="/user/shop" className="link">
+                            <FontAwesomeIcon icon={faStore} />
+                            <em className="link">Tienda</em>
+                        </Link>
                     </div>
                     <div className="order-history button-panel-profile">
-                        <FontAwesomeIcon icon={faReceipt} />
-                        <Link to="/user/history" className="link">Historial</Link>
+                        <Link to="/user/history" className="link">
+                            <FontAwesomeIcon icon={faReceipt} />
+                            <em className="link">Historial</em>
+                        </Link>
                     </div>
                     <div className="contact button-panel-profile">
-                        <FontAwesomeIcon icon={faMapMarkedAlt} />
-                        <Link to="/user/contact" className="link">Contacto</Link>
+                        <Link to="/user/contact" className="link">
+                            <FontAwesomeIcon icon={faMapMarkedAlt} />
+                            <em className="link">Contacto</em>
+                        </Link>
                     </div>
                     <div className="delete-acount">
                         <FontAwesomeIcon icon={faTrash} />
@@ -45,13 +55,13 @@ const UserProfile = () => {
             </div>
 
             <div className="profile-content">
-                    <Switch>
-                        <Route path='/user' exact component={ProfileContent} />
-                        <Route path='/user/edit' exact component={Edit} />
-                        <Route path='/user/shop' exact component={Shop} />
-                        <Route path='/user/history' exact component={History} />
-                        <Route path='/user/contact' exact component={Contact} />
-                    </Switch>
+                <Switch>
+                    <Route path='/user' exact component={ProfileContent} />
+                    <Route path='/user/edit' exact component={Edit} />
+                    <Route path='/user/shop' exact component={Shop} />
+                    <Route path='/user/history' exact component={History} />
+                    <Route path='/user/contact' exact component={Contact} />
+                </Switch>
             </div>
 
             <div className="profile-user">

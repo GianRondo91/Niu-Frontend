@@ -3,7 +3,7 @@ import './App.scss';
 
 import AdminProfile from './views/AdminProfile/AdminProfile';
 import Home from './views/Home/Home';
-import Profile from './views/Profile/Profile';
+import UserProfile from './views/UserProfile/UserProfile';
 import Shop from './views/Shop/Shop';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       	<BrowserRouter>
 		      <Switch>
             <Route path='/' exact component={Home}/>
-            <Route path='/user' component={Profile}/>
+            <Route path='/user' component={UserProfile}/>
             <Route path='/admin' component={AdminProfile}/>
             <Route path='/shop' component={Shop}/> 
 		      </Switch>
