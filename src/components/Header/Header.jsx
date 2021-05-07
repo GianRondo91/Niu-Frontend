@@ -15,12 +15,12 @@ const Header = () => {
             <div className="header-center">
                 <ul className="header-center-ul">
                     <li className="header-center-ul-li ul-li ul-li-left" ><a href="/">Home</a></li>
-                    <li className="header-center-ul-li ul-li ul-li-left" > <a href="#menu">Carta</a></li>
+                    <li className="header-center-ul-li ul-li ul-li-left" > <a href="/#menu">Carta</a></li>
                     <li className="header-center-ul-li ul-li ul-li-left" ><a href="/shop">Tienda</a></li>
-                    <li className="header-center-ul-li menu-logo" href="/"></li>
-                    <li className="header-center-ul-li ul-li ul-li-right" ><a href="#gallery">Cocina</a></li>
-                    <li className="header-center-ul-li ul-li ul-li-right" ><a href="#team">Equipo</a></li>
-                    <li className="header-center-ul-li ul-li ul-li-right" ><a href="#contact">Contacto</a></li>
+                    <li className="header-center-ul-li menu-logo"></li>
+                    <li className="header-center-ul-li ul-li ul-li-right" ><a href="/#gallery">Cocina</a></li>
+                    <li className="header-center-ul-li ul-li ul-li-right" ><a href="/#team">Equipo</a></li>
+                    <li className="header-center-ul-li ul-li ul-li-right" ><a href="/#contact">Contacto</a></li>
                 </ul>
             </div>
 

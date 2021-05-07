@@ -1,15 +1,13 @@
 .profile{
     display: flex;
-    //background-color: darkgoldenrod;
     width: 1300px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2%;
     .profile-panel{
         width: 20%;
-        //background-color: cadetblue;
         ;
         .profile-panel-center{
-            //background-color:darkorchid;
             margin: 10px;
             .logo{
                 background-image: url('../../images/logo.png');
@@ -21,19 +19,23 @@
             .button-panel-profile{
                 width: 90%;
                 margin: 30px auto 30px auto;
-                padding: 14px;
+                padding: 14px 14px 14px 40px;
                 border-radius: 8px;
-                background-color: white;
-                text-align: center;
+                text-align: left;
+                cursor: pointer;
                 &:hover{
-                    background-color:lightblue;
+                    background-color: cadetblue;
                     color: white;
+                    em,
+                    a{
+                        color: white;
+                    }
                 }
             }
             .link{
-                color: grey;
-                text-decoration: none;
                 margin-left: 20px;
+                color: black;
+                text-decoration: none;
             }
             .delete-acount{
                 margin-top: 80px;
@@ -48,11 +50,13 @@
     }
     .profile-content{
         width: 60%;
-        background-color: cornflowerblue;
+        //background-color: cornflowerblue;
     }
-    .profile-user{
+    .profile-user,
+    .profile-admin{
         width: 20%;
-        background-color: #E6EEEC;
+        //background-color: #E6EEEC;
+        background-color:cadetblue;
         border-radius: 20px;
         .exit{
             position: relative;
@@ -64,12 +68,14 @@
                 color: red;
             }
         }
-        .profile-user-panel{
+        .profile-user-panel,
+        .profile-admin-panel{
             //background: antiquewhite;
             margin: 60px auto 80px auto;
             text-align: center;
             width: 90%;
-            .user-image{
+            .user-image,
+            .admin-image{
                 background-image: url('../../images/user-image.png');
                 width: 104px;
                 margin-right: auto;
@@ -79,14 +85,18 @@
                 
             }
             .user-name,
-            .user-email{
+            .user-email,
+            .admin-name,
+            .admin-email{
                 width: 200px;
                 margin: 30px auto 30px auto;
                 margin-top: 30px;
                 margin-bottom: 20px;
+                color: white;
             }
         }
-        .profile-user-qr{
+        .profile-user-qr,
+        .profile-admin-qr{
             background-image: url('../../images/qr-prueba.png');
             width: 143px;
             margin-right: auto;
@@ -97,7 +107,8 @@
     }
     .profile-panel,
     .profile-content,
-    .profile-user{
+    .profile-user,
+    .profile-admin{
         margin: 29px 10px 30px 10px;
     }
 }

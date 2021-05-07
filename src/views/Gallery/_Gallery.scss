@@ -1,11 +1,10 @@
 .gallery{
     background-image: url('https://user-images.githubusercontent.com/56218293/117150201-3897eb00-adb8-11eb-9acd-c8d2c61ba837.png');
-    
-    overflow: scroll;
-    margin-top: 20px;
+    //overflow: scroll;
+    margin-top: 100px;
     background-repeat: no-repeat;
     background-position: center;
-    height: 700px;
+    height: 800px;
     background-attachment: fixed;
     background-size: cover;
     .gallery-caption{
