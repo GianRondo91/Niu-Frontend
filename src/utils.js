@@ -11,9 +11,9 @@ const onlyLetters = (inputValue) => {
     };
 };
 
-// const onlyNumbers = (inputValue) => {
-//     return /^\d*$/.test(inputValue) ? 'Número invalido' : null;
-// };
+const onlyNumbers = (inputValue) => {
+    return /^\d*$/.test(inputValue) ? 'Número invalido' : null;
+};
 
 const isDate = (inputValue) => {
     const date = moment(inputValue);
@@ -21,7 +21,7 @@ const isDate = (inputValue) => {
 }
 
 const lettersAndNumbers = (inputValue) => {
-    return /(\d|\w)/.test(inputValue) ? null : 'Campo vacio';
+    return /^((\d|\w)\s*)+$/.test(inputValue) ? null : 'El campo sólo puede contener letras o números';
 }
 
 const isPhone = (inputValue) => {
@@ -42,10 +42,6 @@ const isPassword = (inputValue) => {
     }
 }
 
-const isTime = (inputValue) => {
-    const date = moment(inputValue, 'HH:mm', true);
-    return date.isValid() ? null : 'Hora invalida';
-}
 
 const validateField = (inputName, inputValue) => {
     //
@@ -53,11 +49,14 @@ const validateField = (inputName, inputValue) => {
         case 'name':
         case 'surname1':
         case 'reason':
+        case 'city':
+        case 'state':
             return onlyLetters(inputValue) || notEmptyOrWhitespace(inputValue);
         case 'surname2':
             return onlyLetters(inputValue);
-        // case 'age':
-        //     return onlyNumbers(inputValue) && notEmptyOrWhitespace(inputValue);
+        case 'age':
+        case 'cp':
+            return onlyNumbers(inputValue) && notEmptyOrWhitespace(inputValue);
         case 'birth':
             return isDate(inputValue) || notEmptyOrWhitespace(inputValue);
         case 'address':
@@ -69,10 +68,7 @@ const validateField = (inputName, inputValue) => {
         case 'password':
             return isPassword(inputValue) || notEmptyOrWhitespace(inputValue);
         case 'gender':
-        case 'userType':
             return notEmptyOrWhitespace(inputValue);
-        case 'time': 
-            return isTime(inputValue);
         default:
             return null;
     }

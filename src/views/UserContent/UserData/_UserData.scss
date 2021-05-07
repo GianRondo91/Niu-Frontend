@@ -23,6 +23,12 @@
                     border-left: none;
                     outline: none;
                     margin-bottom: 20px;
+                    &.invalid{
+                        border-bottom-color: red;
+                    }
+                    &.valid{
+                        border-bottom-color: green;
+                    }
                 }
             }
         }

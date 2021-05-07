@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
 import userReducer from './userReducer';
-import appointmentReducer from './appointmentReducer';
+import orderReducer from './orderReducer';
+import productReducer from './productReducer';
 
 const rootReducer = combineReducers({
     userReducer, 
-    appointmentReducer
+    orderReducer,
+    productReducer
 });
 
 export default rootReducer;

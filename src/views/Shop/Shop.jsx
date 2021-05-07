@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
 import { Switch, Route, Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +15,39 @@ import MainCourse from '../Shop/MainCourses/MainCourse';
 import Starter from '../Shop/Starters/Starter';
 import Menu from '../Shop/Menu/Menu';
 
-const Shop = () => {
+import { LOAD } from '../../redux/types/productType';
+
+const Shop = (props) => {
+
+    const categorizeProducts = (products) => {
+        let categorized = {};
+
+        products.forEach(product => {
+            if(!categorized[product.category]){
+                categorized[product.category] = [];
+            };
+            categorized[product.category].push(product);
+        });
+
+        return categorized;
+    };
+
+    useEffect(() => {
+        const getUser = async () => {
+
+            let token = props.token;
+
+            if (!token) {
+                return;
+            }
+
+            let result = await axios.get(`http://localhost:3001/products`, { headers: { authorization: token } });
+
+            props.dispatch({ type: LOAD, payload: categorizeProducts(result.data)});
+        }
+        getUser();
+    }, []);
+
     return (
         <div id="shop">
             <Header />
@@ -65,4 +99,11 @@ const Shop = () => {
     )
 };
 
-export default Shop;
+const mapStateToProps = state => {
+    return {
+        userId: state.userReducer.userId,
+        token: state.userReducer.token
+    }
+};
+
+export default connect(mapStateToProps)(Shop);

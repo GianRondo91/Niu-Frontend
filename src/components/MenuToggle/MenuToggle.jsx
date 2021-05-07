@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavItem } from 'reactstrap';
 import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimesCircle, faMobileAlt, faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimesCircle, faMobileAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import 'bootstrap/dist/css/bootstrap.css';

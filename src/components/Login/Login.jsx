@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { validateField, validateFields, isValid } from '../../uti';
+import { validateField, validateFields } from '../../utils';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -34,8 +34,7 @@ const Login = (props) => {
 
     const [dataLogin, setLogin] = useState({
         email: '',
-        password: '',
-        role: 'user'
+        password: ''
     })
 
     const handleState = (event) => {
@@ -61,14 +60,14 @@ const Login = (props) => {
 
 
         try {
-            let result = await axios.post('http://localhost:3001/user/login', dataLogin);
-            if (dataLogin.role === 'user') {
-                props.dispatch({ type: LOGIN, payload: result.data });
-                return setTimeout(() => { history.push('/home-user') }, 200);
-            } else if (dataLogin.role === 'admin') {
-                props.dispatch({ type: LOGIN, payload: result.data })
-                return setTimeout(() => { history.push('/home-admin') }, 200);
+            let result = await axios.post('http://localhost:3001/users/login', dataLogin);
+            props.dispatch({ type: LOGIN, payload: result.data });
+
+            if(result.data.isAdmin){
+                return setTimeout(() => { history.push('/admin') }, 200);
             }
+
+            return setTimeout(() => { history.push('/user') }, 200);
 
         } catch (error) {
             if (error.isAxiosError & error.response?.status === 403) {
@@ -97,7 +96,7 @@ const Login = (props) => {
                 </ModalBody>
                 <ModalFooter>
                     <Button color='danger' ><Register/></Button>
-                    <Button color='info' >GOOGLE LOGIN</Button>
+                    {/* <Button color='info' >GOOGLE LOGIN</Button> */}
                     <Button color='primary' onClick={sendData}>Entrar</Button>
                 </ModalFooter>
             </Modal>

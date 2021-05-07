@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUserEdit, faUtensils, faReceipt, faTrash, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 import AdminContent from '../AdminContent/AdminContent';
-import EditAdmin from '../AdminContent/EditAdmin/EditAdmin';
+import EditAdmin from '../UserContent/UserData/UserData';
 import AddAdmin from '../AdminContent/AddAdmin/AddAdmin';
 import AddProducts from '../AdminContent/AddProduct/AddProduct';
 import Orders from '../AdminContent/Orders/Orders';

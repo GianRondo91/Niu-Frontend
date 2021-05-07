@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { validateField, validateFields, isValid } from '../../uti';
+import { validateField, validateFields, isValid } from '../../utils';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -11,7 +11,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, L
 
 //Redux
 import { connect } from 'react-redux';
-import { REGISTER } from '../../redux/types/userType';
 
 const Register = (props) => {
 
@@ -60,13 +59,9 @@ const Register = (props) => {
 
         try {
             let result = await axios.post('http://localhost:3001/user/register', dataRegister);
-            if (dataRegister.role === 'user') {
-                props.dispatch({ type: REGISTER, payload: result.data });
-                return setTimeout(() => { history.push('/home-user') }, 200);
-            } else if (dataRegister.role === 'admin') {
-                props.dispatch({ type: REGISTER, payload: result.data })
-                return setTimeout(() => { history.push('/home-admin') }, 200);
-            }
+            
+            //TODO: Mostrar mensaje de registrado ok
+            toggleRegister();
 
         } catch (error) {
             if (error.isAxiosError & error.response?.status === 403) {

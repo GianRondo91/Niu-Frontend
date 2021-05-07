@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUserEdit, faStore, faReceipt, faTrash, faSignOutAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +14,39 @@ import Shop from '../UserContent/Shop/Shop';
 import History from '../UserContent/OrderHistory/OrderHistory';
 import Contact from '../UserContent/Contact/Contact';
 
-const UserProfile = () => {
+const UserProfile = (props) => {
+
+    let history = useHistory();
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        const getUser = async() => {
+
+            let id = props.userId;
+            let token = props.token;
+   
+           if(!token){
+               return;
+           }
+   
+           let result = await axios.get(`http://localhost:3001/users/${id}`, { headers: { authorization: token } });
+           
+           setUser(result.data);
+        }
+       getUser();
+   },[]);
+
+
+    //ver si esta logeado
+    if(!props.token){
+        setTimeout(()=>{
+             history.push('/');
+        }, 200);
+ 
+        return null;
+    }
+
     return (
         <div className="profile">
             <div className="profile-panel">
@@ -68,8 +103,8 @@ const UserProfile = () => {
                 <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} /></div>
                 <div className="profile-user-panel">
                     <div className="user-image"></div>
-                    <div className="user-name">Nombre del Usuario Completo</div>
-                    <div className="user-email">email@email.com</div>
+                    <div className="user-name">{user.name}</div>
+                    <div className="user-email">{user.email}</div>
                 </div>
                 <div className="profile-user-qr"></div>
             </div>
@@ -77,4 +112,11 @@ const UserProfile = () => {
     )
 };
 
-export default UserProfile;
+const mapStateToProps =state =>{
+    return { 
+      userId : state.userReducer.userId,
+      token : state.userReducer.token
+    }
+  };
+
+export default connect(mapStateToProps)(UserProfile);
