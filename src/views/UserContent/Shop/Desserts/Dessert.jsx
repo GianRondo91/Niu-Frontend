@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { ADD_PRODUCT } from '../../../redux/types/orderType';
+import { ADD_PRODUCT } from '../../../../redux/types/orderType';
 
-const Starter = (props) => {
+const Dessert = (props) => {
 
     const addProduct = (product) => {
         props.dispatch({type: ADD_PRODUCT, payload: {product: product, count: 1}});
@@ -21,9 +21,9 @@ const Starter = (props) => {
         };
         return elements;
     }
-
+    
     return (
-        <div className="starter">
+        <div className="dessert">
             {getProductElements()}
         </div>
     )
@@ -31,8 +31,8 @@ const Starter = (props) => {
 
 const mapStateToProps = state => {
     return {
-        products: state.productReducer.products.starter
+        products: state.productReducer.products.dessert
     }
 };
 
-export default connect(mapStateToProps)(Starter);
+export default connect(mapStateToProps)(Dessert);

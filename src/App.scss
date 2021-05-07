@@ -13,15 +13,14 @@
 @forward './views/Gallery/Gallery.scss';
 @forward './views/Team/Team.scss';
 
-@forward './views/Shop/Shop.scss';
-@forward './views/Shop/FoodDesign';
-
 @forward './views/UserProfile/UserProfile.scss';
 @forward './views/UserContent/ProfileContent.scss';
 @forward './views/UserContent/UserData/UserData.scss';
 @forward './views/UserContent/Shop/Shop.scss';
 @forward './views/UserContent/OrderHistory/OrderHistory.scss';
 @forward './views/UserContent/Contact/Contact.scss';
+@forward './views/UserContent/Shop/FoodDesign.scss';
+@forward './views/UserContent/Cart/Cart.scss';
 
 @forward './views/AdminProfile/AdminProfile.scss';
 @forward './views/AdminContent/AdminContent.scss';

@@ -1,18 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUserEdit, faStore, faReceipt, faTrash, faSignOutAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUserEdit, faStore, faReceipt, faTrash, faSignOutAlt, faMapMarkedAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-//import ProfileContent from '../ProfileContent';
+import {connect} from 'react-redux';
+import { LOGOUT } from '../../redux/types/userType';
+
 import ProfileContent from '../UserContent/ProfileContent';
 import Edit from '../UserContent/UserData/UserData';
 import Shop from '../UserContent/Shop/Shop';
 import History from '../UserContent/OrderHistory/OrderHistory';
 import Contact from '../UserContent/Contact/Contact';
+import Cart from '../UserContent/Cart/Cart';
 
 const UserProfile = (props) => {
 
@@ -20,30 +22,41 @@ const UserProfile = (props) => {
 
     const [user, setUser] = useState({});
 
+    const logOut = () => {
+        let confirmar = window.confirm('¿Seguro que quires salir de tu perfil?');
+        if (confirmar) {
+            setTimeout(() => {
+                props.dispatch({ type: LOGOUT, payload: {} });
+                history.push('/');
+            }, 1000);
+        };
+    };
+
     useEffect(() => {
-        const getUser = async() => {
+        const getUser = async () => {
 
             let id = props.userId;
             let token = props.token;
-   
-           if(!token){
-               return;
-           }
-   
-           let result = await axios.get(`http://localhost:3001/users/${id}`, { headers: { authorization: token } });
-           
-           setUser(result.data);
-        }
-       getUser();
-   },[]);
 
+            if (!token) {
+                return;
+            }
+
+            let result = await axios.get(`http://localhost:3001/users/${id}`, { headers: { authorization: token } });
+
+            setUser(result.data);
+        }
+        getUser();
+    }, []);
+
+    useEffect(() => { }, [props.itemCount]);
 
     //ver si esta logeado
-    if(!props.token){
-        setTimeout(()=>{
-             history.push('/');
+    if (!props.token) {
+        setTimeout(() => {
+            history.push('/');
         }, 200);
- 
+
         return null;
     }
 
@@ -55,7 +68,7 @@ const UserProfile = (props) => {
                     <div className="user-data button-panel-profile">
                         <Link to="/user" className="link">
                             <FontAwesomeIcon icon={faHome} />
-                            <em className="link">Home</em>    
+                            <em className="link">Home</em>
                         </Link>
                     </div>
                     <div className="user-data button-panel-profile">
@@ -65,7 +78,7 @@ const UserProfile = (props) => {
                         </Link>
                     </div>
                     <div className="shop button-panel-profile">
-                        <Link to="/user/shop" className="link">
+                        <Link to="/user/shop/starters" className="link">
                             <FontAwesomeIcon icon={faStore} />
                             <em className="link">Tienda</em>
                         </Link>
@@ -93,14 +106,20 @@ const UserProfile = (props) => {
                 <Switch>
                     <Route path='/user' exact component={ProfileContent} />
                     <Route path='/user/edit' exact component={Edit} />
-                    <Route path='/user/shop' exact component={Shop} />
+                    <Route path='/user/shop' component={Shop} />
                     <Route path='/user/history' exact component={History} />
                     <Route path='/user/contact' exact component={Contact} />
+                    <Route path='/user/cart' exact component={Cart}/>
                 </Switch>
             </div>
 
             <div className="profile-user">
-                <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} /></div>
+                <span className="cartShop">
+                    <Link to="user/cart">
+                        <FontAwesomeIcon icon={faShoppingCart} onClick={''} />{props.itemCount}
+                    </Link>
+                    </span>
+                <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} onClick={logOut}/></div>
                 <div className="profile-user-panel">
                     <div className="user-image"></div>
                     <div className="user-name">{user.name}</div>
@@ -112,11 +131,12 @@ const UserProfile = (props) => {
     )
 };
 
-const mapStateToProps =state =>{
-    return { 
-      userId : state.userReducer.userId,
-      token : state.userReducer.token
+const mapStateToProps = state => {
+    return {
+        userId: state.userReducer.userId,
+        token: state.userReducer.token,
+        itemCount: state.orderReducer.order.productCount
     }
-  };
+};
 
 export default connect(mapStateToProps)(UserProfile);
