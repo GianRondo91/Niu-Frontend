@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserData = () => {
+const EditAdmin = () => {
     return (
         <div className="user-data">
             <div className="data-title">DATOS PERSONALES</div>
@@ -45,4 +45,4 @@ const UserData = () => {
     )
 };
 
-export default UserData;
+export default EditAdmin;

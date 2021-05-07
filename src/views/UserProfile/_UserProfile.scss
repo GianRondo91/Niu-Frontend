@@ -50,7 +50,8 @@
         width: 60%;
         background-color: cornflowerblue;
     }
-    .profile-user{
+    .profile-user,
+    .profile-admin{
         width: 20%;
         background-color: #E6EEEC;
         border-radius: 20px;
@@ -64,12 +65,14 @@
                 color: red;
             }
         }
-        .profile-user-panel{
+        .profile-user-panel,
+        .profile-admin-panel{
             //background: antiquewhite;
             margin: 60px auto 80px auto;
             text-align: center;
             width: 90%;
-            .user-image{
+            .user-image,
+            .admin-image{
                 background-image: url('../../images/user-image.png');
                 width: 104px;
                 margin-right: auto;
@@ -79,14 +82,17 @@
                 
             }
             .user-name,
-            .user-email{
+            .user-email,
+            .admin-name,
+            .admin-email{
                 width: 200px;
                 margin: 30px auto 30px auto;
                 margin-top: 30px;
                 margin-bottom: 20px;
             }
         }
-        .profile-user-qr{
+        .profile-user-qr,
+        .profile-admin-qr{
             background-image: url('../../images/qr-prueba.png');
             width: 143px;
             margin-right: auto;
@@ -97,7 +103,8 @@
     }
     .profile-panel,
     .profile-content,
-    .profile-user{
+    .profile-user,
+    .profile-admin{
         margin: 29px 10px 30px 10px;
     }
 }
