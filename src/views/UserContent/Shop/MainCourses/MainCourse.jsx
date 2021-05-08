@@ -12,8 +12,8 @@ const MainCourse = (props) => {
         let elements = [];
 
         for (let product of props.products){
-            elements.push(<div className="product">
-                <div className="product-img"></div>
+            elements.push(<div key={product.id} className="product">
+                <div className="product-img"><img src={product.image} alt="" className="image"/></div>
                 <div className="product-name">{product.name}</div>
                 <div className="product-price">{product.price}€</div>
                 <div className="product-button" onClick={() => addProduct(product)}>Agregar</div>

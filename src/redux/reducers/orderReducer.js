@@ -1,4 +1,4 @@
-import { CANCEL, ADD_PRODUCT, REMOVE_PRODUCT } from '../types/orderType';
+import { CLEAR, ADD_PRODUCT, REMOVE_PRODUCT } from '../types/orderType';
 
 const initialState = {
     order: {
@@ -11,13 +11,14 @@ const initialState = {
 const orderReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case CANCEL:
+        case CLEAR:
             
             return {
                 ...state, 
                 order: {
                     products:[],
-                    price: 0
+                    price: 0,
+                    productCount: 0
                 }
             }
 
@@ -51,16 +52,22 @@ const orderReducer = (state = initialState, action) => {
 
                 if (orderProduct) {
 
-                    if(orderProduct.count <= 0){
-                        state.order.products.splice(state.order.products.indexOf(orderProduct), 1);
+                    let toRemove = Math.min(orderProduct.count, action.payload.count);
+                    let products = [...state.order.products];
+
+                    if(toRemove >= orderProduct.count){
+                        products.splice(state.order.products.indexOf(orderProduct), 1);
+                    } else {
+                        orderProduct.count -= toRemove; 
                     }
 
                     return {
                         ...state,
                         order: {
                             ...state.order,
-                            price: orderProduct.count - action.payload.count,
-                            productCount: state.order.productCount - Math.min(action.payload.count, orderProduct.count)
+                            products: products,
+                            price: state.order.price - toRemove * orderProduct.product.price,
+                            productCount: state.order.productCount - toRemove
                         }
                     };
                 }

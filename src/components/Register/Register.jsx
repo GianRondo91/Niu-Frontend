@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { validateField, validateFields, isValid } from '../../utils';
+import { validateField, validateFields } from '../../utils';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -27,13 +26,22 @@ const Register = (props) => {
         setState({ open: !state.open });
     }
 
-    const history = useHistory();
+    //const history = useHistory();
 
     const [dataRegister, setRegister] = useState({
+        name: '',
+        surname1: '',
+        surname2: '',
+        phone: '',
         email: '',
         password: '',
-        role: 'user'
+
     })
+
+    //UseEffect
+    useEffect(() => {
+        console.log('Componente montado en el registro!');
+    }, []);
 
     const handleState = (event) => {
         let data = { ...dataRegister, [event.target.name]: event.target.value };
@@ -47,7 +55,8 @@ const Register = (props) => {
     };
 
 
-    const sendData = async () => {
+    //Función para traer los datos del backend
+    const btnRegister = async () => {
 
         let validationResult = validateFields(dataRegister);
 
@@ -58,26 +67,30 @@ const Register = (props) => {
 
 
         try {
-            let result = await axios.post('http://localhost:3001/user/register', dataRegister);
+            await axios.post('http://localhost:3001/users', dataRegister);
+            
+            alert('Usuario registrado con exito');
             
             //TODO: Mostrar mensaje de registrado ok
             toggleRegister();
 
         } catch (error) {
-            if (error.isAxiosError & error.response?.status === 403) {
-                alert('El usuario no existe');
-            }
-        }
+                alert('Error al registrarse');
+        };
     }
     return (
-        <div className="login" >
+        <div className="register" >
             <div className="button-register" onClick={toggleRegister}>
                 {/* <FontAwesomeIcon icon={faUser} /> */}REGISTER
             </div>
 
             <Modal isOpen={state.open}>
-                <Button color='secundary' onClick={toggleRegister}><FontAwesomeIcon icon={faTimesCircle} /></Button>
+                <Button color='secundary' onClick={toggleRegister}>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                </Button>
+
                 <ModalHeader>Registrarse</ModalHeader>
+
                 <ModalBody>
                     <FormGroup>
                         <Label form='name'>Nombre</Label>
@@ -105,7 +118,7 @@ const Register = (props) => {
                     </FormGroup>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color='primary' onClick={sendData}>Registrarse</Button>
+                    <Button color='primary' onClick={btnRegister}>Registrarse</Button>
                 </ModalFooter>
             </Modal>
 

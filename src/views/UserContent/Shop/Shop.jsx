@@ -30,7 +30,7 @@ const Shop = (props) => {
     };
 
     useEffect(() => {
-        const getUser = async () => {
+        const getProducts = async () => {
 
             let token = props.token;
 
@@ -42,7 +42,7 @@ const Shop = (props) => {
 
             props.dispatch({ type: LOAD, payload: categorizeProducts(result.data) });
         }
-        getUser();
+        getProducts();
     }, []);
 
     return (

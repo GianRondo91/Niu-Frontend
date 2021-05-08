@@ -114,12 +114,14 @@ const UserProfile = (props) => {
             </div>
 
             <div className="profile-user">
-                <span className="cartShop">
-                    <Link to="user/cart">
-                        <FontAwesomeIcon icon={faShoppingCart} onClick={''} />{props.itemCount}
+                <div className="cartShop">
+                    <Link to="/user/cart">
+                        <FontAwesomeIcon icon={faShoppingCart} />{props.itemCount}
                     </Link>
-                    </span>
-                <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} onClick={logOut}/></div>
+                </div>
+                <div className="exit">
+                    <FontAwesomeIcon icon={faSignOutAlt} onClick={logOut}/>
+                </div>
                 <div className="profile-user-panel">
                     <div className="user-image"></div>
                     <div className="user-name">{user.name}</div>
