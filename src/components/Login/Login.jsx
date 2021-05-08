@@ -75,6 +75,7 @@ const Login = (props) => {
             }
         }
     }
+
     return (
         <div className="login" >
             <div className="button-login" onClick={toggleLogin}>
@@ -82,8 +83,12 @@ const Login = (props) => {
             </div>
 
             <Modal isOpen={state.open}>
-                <Button color='secundary' onClick={toggleLogin}><FontAwesomeIcon icon={faTimesCircle} /></Button>
+                <Button color='secundary' onClick={toggleLogin}>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                </Button>
+
                 <ModalHeader>Iniciar Sesión</ModalHeader>
+                
                 <ModalBody>
                     <FormGroup>
                         <Label form='email'>Email</Label>

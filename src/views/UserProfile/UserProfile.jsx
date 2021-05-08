@@ -116,7 +116,7 @@ const UserProfile = (props) => {
             <div className="profile-user">
                 <span className="cartShop">
                     <Link to="user/cart">
-                        <FontAwesomeIcon icon={faShoppingCart} onClick={''} />{props.itemCount}
+                        <FontAwesomeIcon icon={faShoppingCart} />{props.itemCount}
                     </Link>
                     </span>
                 <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} onClick={logOut}/></div>

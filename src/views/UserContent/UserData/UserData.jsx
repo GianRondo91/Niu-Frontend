@@ -147,6 +147,7 @@ const UserData = (props) => {
                             onChange={handleState}
                         />
                     </div>
+                    
                     <div className="form-data-right">
                         <label htmlFor="">Provincia</label>
                         <input
