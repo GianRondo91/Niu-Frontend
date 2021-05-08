@@ -14,11 +14,12 @@
         height: 175px;
         margin: 40px;
         .product-img{
-            background-image: url('../../../images/food-ejm.jpeg');
-            width: 150px;
-            margin: auto;
-            height: 120px;
-            background-size: cover;
+            .image{
+                width: 150px;
+                margin: auto;
+                height: 120px;
+                background-size: cover;
+            }
         }
         .product-name{
             width: auto;
@@ -29,11 +30,14 @@
         }
         .product-price{
             position: relative;
-            bottom: 140px;
-            left: 10px;
+            bottom: 162px;
+            right: 9px;
+            background-color: cadetblue;
             color: white;
-            font-size: 20px;
-            width: 5px;
+            font-size: 22px;
+            width: 34px;
+            border-radius: 19px;
+            text-align: center;
         }
         .product-button{
             text-align: center;

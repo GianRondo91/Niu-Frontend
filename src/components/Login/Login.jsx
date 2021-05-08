@@ -26,12 +26,16 @@ const Login = (props) => {
         name: null
     });
 
-    const toggleLogin = () => {
-        setState({ open: !state.open });
-    }
-
     const history = useHistory();
 
+    const toggleLogin = () => {
+        if(props.token){
+            history.push('/user');
+            return;
+        }
+        setState({ open: !state.open });
+    }
+    
     const [dataLogin, setLogin] = useState({
         email: '',
         password: ''
@@ -110,4 +114,11 @@ const Login = (props) => {
     )
 };
 
-export default connect()(Login);
+const mapStateToProps = state => {
+    return {
+        token: state.userReducer.token,
+        order: state.orderReducer.order
+    }
+};
+
+export default connect(mapStateToProps)(Login);

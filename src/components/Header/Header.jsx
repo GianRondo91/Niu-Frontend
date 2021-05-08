@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 import Login from '../Login/Login';
 import MenuTogle from '../MenuToggle/MenuToggle';
 import { connect } from 'react-redux';
 
 const Header = (props) => {
-
-    useEffect(() => {}, [props.itemCount]);
 
     return (
         <div className="header">
@@ -29,16 +25,9 @@ const Header = (props) => {
 
             <div className="header-right">
                 <span className="icon-align"><Login/></span>
-                <span className="icon-align icon-align-left"><FontAwesomeIcon icon={faShoppingCart} />{props.itemCount}</span>
             </div>
         </div>
     )
 };
 
-const mapStateToProps = state => {
-    return {
-        itemCount: state.orderReducer.order.productCount
-    }
-};
-
-export default connect(mapStateToProps)(Header);
+export default connect()(Header);

@@ -3,13 +3,13 @@ import React from 'react';
 const Menu = () => {
 
     return (
-        <div id="menu" className="menu">
-            <div className="menu-title">
+        <div id="menu" className="menu menu-user">
+            <div className="menu-title menu-user-title">
                     Menú
                 </div>
-            <div className="menu-content">
+            <div className="menu-content menu-user-content">
 
-                <div className="menu-content-left">
+                <div className="menu-content-left menu-user-content-left">
                     <div className="food">
                         <div className="food-title">
                             <div className="food-title-food">
@@ -90,7 +90,7 @@ const Menu = () => {
                     </div>
                 </div>
 
-                <div className="Menu-content-right">
+                <div className="Menu-content-right menu-user-content-left">
                     <div className="food">
                         <div className="food-title">
                             <div className="food-title-food">

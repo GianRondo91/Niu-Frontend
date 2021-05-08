@@ -5,7 +5,7 @@ import Menu from '../../views/Menu/Menu';
 
 const ProfileContent = () => {
     return (
-        <div className="contact">
+        <div className="profile-component">
            <Switch>
                <Route path='/user' exact component={Menu}/>
            </Switch>
