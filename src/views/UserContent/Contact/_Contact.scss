@@ -1,0 +1,27 @@
+.contact {
+    width: 90%;
+    margin: 4% auto;
+    .contact-title {}
+
+    .info {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+        .logo {
+            font-weight: 900;
+            .logo-name {}
+        }
+        .logo,
+        .phone,
+        .hours,
+        .email {
+            margin-bottom: 20px;
+        }
+        .hours {}
+        .email {
+        }
+        p {
+            margin-bottom: 2px;
+        }
+    }
+}

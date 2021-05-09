@@ -1,0 +1,102 @@
+.cart {
+    //background-color: blue;
+    height: 100%;
+    display: flex;
+    .ticket {
+        width: 60%;
+        height: 600px;
+        margin: auto;
+        .info-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .ticket-info {
+            display: flex;
+            .info-lef {
+                .number-order,
+                .takeaway {
+                    em {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .info-right {
+                .date {
+                    margin-left: 20px;
+                    em {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .ticket-orders {
+            height: 300px;
+            width: 90%;
+            margin: auto;
+            background-attachment: fixed;
+            .ticket-order {
+                height: 110px;
+                border-bottom: .5px solid;
+                position: relative;
+                .image-product {
+                    background-image: url('../../../images/food-ejm.jpeg');
+                    width: 140px;
+                    height: 100px;
+                    background-size: cover;
+                }
+                .name-product,
+                .descripton,
+                .count {
+                    position: relative;
+                    left: 160px;
+                    bottom: 100px;
+                }
+                .count {
+                    bottom: 70px;
+                }
+                .price-counts {
+                    float: right;
+                    position: relative;
+                    right: 20px;
+                    bottom: 100px;
+                    font-size: 20px;
+                }
+                .delete-product{
+                    position: absolute;
+                    font-size: 20px;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+        }
+        .ticket-buttons {
+            
+            .total {
+                float: right;
+                font-size: 24px;
+                em {
+                    font-size: 20px;
+                    font-weight: 500;
+                    position: relative;
+                    right: 30px;
+                }
+            }
+            .cancel,
+            .code-generate {
+                position: relative;
+            }
+
+            .cancel{
+                top: 90px;
+            }
+            .code-generate {
+                float: right;
+                top: 60px;
+                left: 60px;
+            }
+        }
+    }
+}

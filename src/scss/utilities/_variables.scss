@@ -1,0 +1,93 @@
+/*Sizes*/
+
+$size-a: 0px;
+$size-b: 1px;
+$size-c: 2px;
+$size-d: 4px;
+$size-e: 6px;
+$size-f: 8px;
+$size-g: 10px;
+$size-h: 12px;
+$size-i: 14px;
+$size-j: 16px;
+$size-k: 18px;
+$size-l: 20px;
+$size-m: 22px;
+$size-n: 24px;
+$size-ñ: 26px;
+$size-o: 28px;
+$size-p: 30px;
+$size-q: 32px;
+$size-r: 34px;
+$size-s: 36px;
+$size-t: 38px;
+$size-u: 40px;
+
+/*Margin and Padding*/
+
+$mp-a: 0px;
+$mp-b: 2px;
+$mp-c: 4px;
+$mp-d: 6px;
+$mp-e: 8px;
+$mp-f: 10px;
+$mp-g: 12px;
+$mp-h: 16px;
+$mp-i: 20px;
+$mp-j: 24px;
+$mp-k: 32px;
+$mp-l: 40px;
+$mp-m: 48px;
+$mp-n: 64px;
+$mp-nn: 80px;
+$mp-o: 96px;
+$mp-p: 128px;
+$mp-q: 160px;
+$mp-r: 192px;
+$mp-s: 224px;
+$mp-t: 256px;
+$mp-u: 320px;
+$mp-v: 480px;
+$mp-w: 640px;
+$mp-x: 700px;
+$mp-y: 800px;
+$mp-z: 900px;
+
+/*centenas*/
+
+$hundreds: (100px, 200px, 300px, 400px, 500px, 600px, 700px, 800px, 900px, 100px);
+
+/*Media-query*/
+
+$medias: (375px, 1007px, 1200px, 1400px, 1440px);
+
+/*Font-weight*/
+
+$fw: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+/*Porcentjes*/
+
+$per-0: 0%;
+$per-1: 10%;
+$per-2: 20%;
+$per-3: 30%;
+$per-4: 40%;
+$per-5: 50%;
+$per-6: 60%;
+$per-7: 70%;
+$per-8: 80%;
+$per-9: 90%;
+$per-10: 100%;
+
+/*Colours*/
+
+$white: #f7f7ee;
+$black: #222831;
+$brown: #E3D0B9;
+$grey: (#C7CFB7, #9CADA4, #9DAB86);
+
+/*Buttons*/
+
+$btnBlue:(#3d94f6, #337fed, #1e62d0);
+$btnRed:(#f24537, #c62d1f, #d02718);
+$btnGreen:(#89c403, #74b807, #77a809);

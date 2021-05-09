@@ -1,0 +1,130 @@
+.profile {
+    display: flex;
+    width: 1440px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    .profile-panel {
+        width: 10%;
+        ;
+        .profile-panel-center {
+            margin: 10px;
+            .logo {
+                background-image: url('../../images/logo.png');
+                width: 80px;
+                height: 80px;
+                margin: 0px auto 70px auto;
+                background-size: 100%;
+            }
+            .button-panel-profile {
+                width: 90%;
+                margin: 60px auto;
+                border-radius: 8px;
+                text-align: left;
+                cursor: pointer;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                &:hover {
+                    background-color: cadetblue;
+                    color: white;
+                    em,
+                    a {
+                        color: white;
+                    }
+                }
+            }
+            .link {
+                margin-left: 8px;
+                color: black;
+                text-decoration: none;
+            }
+            .delete-acount {
+                text-align: center;
+                cursor: pointer;
+                position: relative;
+                top: 100px;
+                &:hover,
+                .link:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+    .profile-content {
+        width: 70%;
+        //background-color: cornflowerblue;
+    }
+    .profile-user,
+    .profile-admin {
+        width: 20%;
+        //background-color: #E6EEEC;
+        background-color: cadetblue;
+        border-radius: 20px;
+        .cartShop {
+            position: relative;
+            font-size: 23px;
+            left: 20px;
+            top: 26px;
+            cursor: pointer;
+            a {
+                color: black;
+                text-decoration: none;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+        .exit {
+            position: relative;
+            left: 229px;
+            bottom: 6px;
+            font-size: 23px;
+            width: 18px;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+        }
+        .profile-user-panel,
+        .profile-admin-panel {
+            //background: antiquewhite;
+            margin: 60px auto 80px auto;
+            text-align: center;
+            width: 90%;
+            .user-image,
+            .admin-image {
+                background-image: url('../../images/user-image.png');
+                width: 104px;
+                margin-right: auto;
+                margin-left: auto;
+                height: 80px;
+                background-size: 120px;
+            }
+            .user-name,
+            .user-email,
+            .admin-name,
+            .admin-email {
+                width: 200px;
+                margin: 30px auto 30px auto;
+                margin-top: 30px;
+                margin-bottom: 20px;
+                color: white;
+            }
+        }
+        .profile-user-qr,
+        .profile-admin-qr {
+            background-image: url('../../images/qr-prueba.png');
+            width: 143px;
+            margin-right: auto;
+            margin-left: auto;
+            height: 140px;
+            background-size: cover;
+        }
+    }
+    .profile-panel,
+    .profile-content,
+    .profile-user,
+    .profile-admin {
+        margin: 10px;
+    }
+}

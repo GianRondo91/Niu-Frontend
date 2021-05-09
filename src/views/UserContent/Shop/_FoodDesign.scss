@@ -1,0 +1,56 @@
+.starter,
+.mainCourse,
+.drink,
+.dessert,
+.menu-shop{
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    overflow: scroll;
+    height: 100%;
+    margin-left: 4%;
+    .product{
+        width: 150px;
+        height: 175px;
+        margin: 40px;
+        .product-img{
+            .image{
+                width: 150px;
+                margin: auto;
+                height: 120px;
+                background-size: cover;
+            }
+        }
+        .product-name{
+            width: auto;
+            position: relative;
+            bottom: 2px;
+            color: black;
+            text-align: center;
+        }
+        .product-price{
+            position: relative;
+            bottom: 162px;
+            right: 9px;
+            background-color: cadetblue;
+            color: white;
+            font-size: 22px;
+            width: 34px;
+            border-radius: 19px;
+            text-align: center;
+        }
+        .product-button{
+            text-align: center;
+            background-color: cadetblue;
+            border-radius: 5px;
+            padding: 4px;
+            cursor: pointer;
+            position: relative;
+            bottom: 30px;
+            &:hover{
+                background-color: #028B4B;
+                color: white;
+            }
+        }
+    }
+}

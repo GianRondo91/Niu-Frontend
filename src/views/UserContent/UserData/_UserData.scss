@@ -1,0 +1,48 @@
+.user-data {
+    .data-title {
+        margin-top: 20px;
+        font-size: 24px;
+        left: 148px;
+        position: relative;
+    }
+    .form-data {
+        display: grid;
+        .form-data-center {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            .form-data-left {}
+            .form-data-right {}
+            .form-data-left,
+            .form-data-right {
+                display: grid;
+                width: 300px;
+                margin: 30px 30px 10px 30px;
+                .input{
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
+                    outline: none;
+                    margin-bottom: 20px;
+                    &.invalid{
+                        border-bottom-color: red;
+                    }
+                    &.valid{
+                        border-bottom-color: green;
+                    }
+                }
+            }
+        }
+        .button-update{
+            width: 320px;
+            margin: 46px auto 60px auto;
+        }
+    }
+    .conditions{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 12px;
+    }
+}
