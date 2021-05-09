@@ -61,7 +61,7 @@ const AddAdmin = (props) => {
 
 
         try {
-            await axios.post('http://localhost:3001/users', dataRegister, {headers: { authorization: props.token}});
+            await axios.post('https://niubackend.herokuapp.com/users', dataRegister, {headers: { authorization: props.token}});
             
             alert('Usuario registrado con exito');
 

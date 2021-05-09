@@ -75,7 +75,7 @@ const Register = (props) => {
         };
 
         try {
-            await axios.post('http://localhost:3001/users', dataRegister);
+            await axios.post('https://niubackend.herokuapp.com/users', dataRegister);
 
             alert('Usuario registrado con exito');
             

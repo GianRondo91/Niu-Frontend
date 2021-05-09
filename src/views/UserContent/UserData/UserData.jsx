@@ -28,7 +28,7 @@ const UserData = (props) => {
                 return;
             }
 
-            let result = await axios.get(`http://localhost:3001/users/${id}`, { headers: { authorization: token } });
+            let result = await axios.get(`https://niubackend.herokuapp.com/users/${id}`, { headers: { authorization: token } });
 
             setUser(result.data);
         }
@@ -68,7 +68,7 @@ const UserData = (props) => {
                 return;
             }
 
-            await axios.put(`http://localhost:3001/users/${id}`, user, { headers: { authorization: token } });
+            await axios.put(`https://niubackend.herokuapp.com/users/${id}`, user, { headers: { authorization: token } });
 
             alert('Guardado con éxito!!!')
         } catch (error) {

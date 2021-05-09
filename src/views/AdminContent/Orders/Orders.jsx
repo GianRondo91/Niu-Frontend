@@ -22,7 +22,7 @@ const Orders = (props) => {
                 return;
             }
 
-            let result = await axios.get(`http://localhost:3001/products`, { headers: { authorization: token } });
+            let result = await axios.get(`https://niubackend.herokuapp.com/products`, { headers: { authorization: token } });
 
             setProducts(result.data);
         }
@@ -38,7 +38,7 @@ const Orders = (props) => {
                 return;
             }
 
-            let result = await axios.get(`http://localhost:3001/orders?delivered=0`, { headers: { authorization: token } });
+            let result = await axios.get(`https://niubackend.herokuapp.com/orders?delivered=0`, { headers: { authorization: token } });
 
             setOrders(result.data);
         }
@@ -48,7 +48,7 @@ const Orders = (props) => {
     const viewOrder = async (order, index) => {
 
         if (!order.products) {
-            let result = await axios.get(`http://localhost:3001/orders/${order.id}/products`, { headers: { authorization: props.token } });
+            let result = await axios.get(`https://niubackend.herokuapp.com/orders/${order.id}/products`, { headers: { authorization: props.token } });
 
             order.products = result.data.map(
                 orderProduct => {
@@ -77,7 +77,7 @@ const Orders = (props) => {
             return;
         };
         
-        let result = await axios.delete(`http://localhost:3001/orders/${order.id}`, { headers: { authorization: props.token } });
+        let result = await axios.delete(`https://niubackend.herokuapp.com/orders/${order.id}`, { headers: { authorization: props.token } });
         
         if(result.status === 200){
             let newOrders = [...orders];
@@ -93,7 +93,7 @@ const Orders = (props) => {
             return;
         };
         
-        let result = await axios.put(`http://localhost:3001/orders/${order.id}`, {id: order.id, delivered: true}, { headers: { authorization: props.token } });
+        let result = await axios.put(`https://niubackend.herokuapp.com/orders/${order.id}`, {id: order.id, delivered: true}, { headers: { authorization: props.token } });
         
         if(result.status === 200){
             let newOrders = [...orders];

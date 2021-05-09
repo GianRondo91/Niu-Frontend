@@ -40,7 +40,7 @@ const AdminProfile = (props) => {
                 return;
             }
 
-            let result = await axios.get(`http://localhost:3001/users/${id}`, { headers: { authorization: token } });
+            let result = await axios.get(`https://niubackend.herokuapp.com/users/${id}`, { headers: { authorization: token } });
 
             setUser(result.data);
         }
@@ -56,7 +56,7 @@ const AdminProfile = (props) => {
             return;
         };
         
-        let result = await axios.delete(`http://localhost:3001/users/${props.userId}`, { headers: { authorization: props.token } });
+        let result = await axios.delete(`https://niubackend.herokuapp.com/users/${props.userId}`, { headers: { authorization: props.token } });
         
         if(result.status === 200){
             props.dispatch({ type: LOGOUT, payload: {}});

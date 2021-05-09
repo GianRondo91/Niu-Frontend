@@ -70,7 +70,7 @@ const Login = (props) => {
         };
 
         try {
-            let result = await axios.post('http://localhost:3001/users/login', dataLogin);
+            let result = await axios.post('https://niubackend.herokuapp.com/users/login', dataLogin);
             props.dispatch({ type: LOGIN, payload: result.data });
 
             if(result.data.isAdmin){

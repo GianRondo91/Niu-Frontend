@@ -38,7 +38,7 @@ const Shop = (props) => {
                 return;
             }
 
-            let result = await axios.get(`http://localhost:3001/products`, { headers: { authorization: token } });
+            let result = await axios.get(`https://niubackend.herokuapp.com/products`, { headers: { authorization: token } });
 
             props.dispatch({ type: LOAD, payload: categorizeProducts(result.data) });
         }

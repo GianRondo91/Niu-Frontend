@@ -43,7 +43,7 @@ const Cart = (props) => {
                 products: props.order.products.map(x => { return { id: x.product.id, count: x.count } })
             };
 
-            await axios.post(`http://localhost:3001/orders`, reqOrder, { headers: { authorization: token } });
+            await axios.post(`https://niubackend.herokuapp.com/orders`, reqOrder, { headers: { authorization: token } });
 
             props.dispatch({type: CLEAR, payload:{}});
 
