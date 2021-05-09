@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Nav, NavItem } from 'reactstrap';
 import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimesCircle, faMobileAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faMobileAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -21,7 +21,7 @@ const MenuTogle = (props) => {
         <div className="menu-toggle">
             <div className="menu-toggle-icon" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
             <div className={classNames("sidebar", { "is-open": state.isOpen})}>
-                <FontAwesomeIcon icon={faTimesCircle} onClick={toggleMenu} className="close-icon"/>
+                <FontAwesomeIcon icon={faTimes} onClick={toggleMenu} className="close-icon"/>
                 <Nav>
                     <NavItem>
                         <div className="logo">
@@ -29,10 +29,7 @@ const MenuTogle = (props) => {
                             <p className="logo-name">bistro</p>
                         </div>
                     </NavItem>
-                    <NavItem>
-                        <FontAwesomeIcon icon={faMapMarkedAlt} />
-                        Avenida Antiguo, Av. del Regne de Valencia, 16, 46005 Valencia
-                    </NavItem>
+                    
                     <NavItem>
                         <FontAwesomeIcon icon={faMobileAlt} />
                         <p className="phone">960 41 84 90</p>
@@ -46,6 +43,10 @@ const MenuTogle = (props) => {
                         </div>
                     </NavItem>
                     <NavItem>
+                        <FontAwesomeIcon icon={faMapMarkedAlt} />
+                        <p className="address">Avenida Antiguo, Av. del Regne de Valencia, 16, 46005 Valencia</p>
+                    </NavItem>
+                    <NavItem className="instagram">
                         <FontAwesomeIcon icon={faInstagram} />
                     </NavItem>
                     {/* <NavItem>

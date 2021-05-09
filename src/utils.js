@@ -1,12 +1,12 @@
 import moment from 'moment';
 
 //FUNCIONES ÚTILES 
-const notEmptyOrWhitespace = (inputValue) => {
-    return /^\s*$/.test(inputValue) ? 'Campo vacio' : null;
+const notEmptyOrWhitespace = (inputValue) => {    
+    return /(^$)|(^\s+$)/.test(inputValue) ? 'Campo vacio' : null;
 };
 
 const onlyLetters = (inputValue) => {
-    if(! /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(inputValue)){
+    if(! /^[a-zA-Z ]*$/.test(inputValue)){
         return 'El campo sólo puede contener letras';
     };
 };
@@ -51,22 +51,22 @@ const validateField = (inputName, inputValue) => {
         case 'reason':
         case 'city':
         case 'state':
-            return onlyLetters(inputValue) || notEmptyOrWhitespace(inputValue);
+            return notEmptyOrWhitespace(inputValue) || onlyLetters(inputValue);
         case 'surname2':
             return onlyLetters(inputValue);
         case 'age':
         case 'cp':
-            return onlyNumbers(inputValue) && notEmptyOrWhitespace(inputValue);
+            return notEmptyOrWhitespace(inputValue) || onlyNumbers(inputValue);
         case 'birth':
-            return isDate(inputValue) || notEmptyOrWhitespace(inputValue);
+            return notEmptyOrWhitespace(inputValue) || isDate(inputValue);
         case 'address':
-            return lettersAndNumbers(inputValue) || notEmptyOrWhitespace(inputValue);
+            return notEmptyOrWhitespace(inputValue) || lettersAndNumbers(inputValue);
         case 'email':
-            return isEmail(inputValue) || notEmptyOrWhitespace(inputValue);
+            return notEmptyOrWhitespace(inputValue) || isEmail(inputValue);
         case 'phone':
-            return isPhone(inputValue) || notEmptyOrWhitespace(inputValue);
+            return notEmptyOrWhitespace(inputValue) || isPhone(inputValue);
         case 'password':
-            return isPassword(inputValue) || notEmptyOrWhitespace(inputValue);
+            return notEmptyOrWhitespace(inputValue) || isPassword(inputValue);
         case 'gender':
             return notEmptyOrWhitespace(inputValue);
         default:

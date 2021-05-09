@@ -51,8 +51,26 @@ const UserProfile = (props) => {
 
     useEffect(() => { }, [props.itemCount]);
 
+    const deleteUser = async () => {
+
+        let confirmar = window.confirm('¿Seguro que quieres eliminar el usuario (no hay vuelta atras)?');
+        if (!confirmar) {
+            return;
+        };
+        
+        let result = await axios.delete(`http://localhost:3001/users/${props.userId}`, { headers: { authorization: props.token } });
+        
+        if(result.status === 200){
+            props.dispatch({ type: LOGOUT, payload: {}});
+            
+            setTimeout(() => {
+                history.push('/');
+            }, 200);            
+        }
+    };
+
     //ver si esta logeado
-    if (!props.token) {
+    if (!props.token || props.isAdmin) {
         setTimeout(() => {
             history.push('/');
         }, 200);
@@ -95,7 +113,7 @@ const UserProfile = (props) => {
                             <em className="link">Contacto</em>
                         </Link>
                     </div>
-                    <div className="delete-acount">
+                    <div className="delete-acount" onClick={deleteUser}>
                         <FontAwesomeIcon icon={faTrash} />
                         <em className="link">Eliminar Cuenta</em>
                     </div>
@@ -137,7 +155,8 @@ const mapStateToProps = state => {
     return {
         userId: state.userReducer.userId,
         token: state.userReducer.token,
-        itemCount: state.orderReducer.order.productCount
+        itemCount: state.orderReducer.order.productCount,
+        isAdmin: state.userReducer.isAdmin
     }
 };
 

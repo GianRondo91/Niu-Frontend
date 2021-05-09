@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { validateField, validateFields } from '../../utils';
+import { validateField, validateFields, isValid } from '../../utils';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label } from 'reactstrap';
+import { faUser, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label, FormFeedback } from 'reactstrap';
 
 //Redux
 import { connect } from 'react-redux';
@@ -30,6 +30,9 @@ const Login = (props) => {
 
     const toggleLogin = () => {
         if(props.token){
+            if(props.isAdmin){
+                return setTimeout(() => { history.push('/admin') }, 200);
+            }
             history.push('/user');
             return;
         }
@@ -53,7 +56,7 @@ const Login = (props) => {
     };
 
 
-    const sendData = async () => {
+    const btnLogin = async () => {
 
         let validationResult = validateFields(dataLogin);
 
@@ -62,6 +65,9 @@ const Login = (props) => {
             validated: true
         });
 
+        if(!isValid(validationResult)){
+            return;
+        };
 
         try {
             let result = await axios.post('http://localhost:3001/users/login', dataLogin);
@@ -83,12 +89,13 @@ const Login = (props) => {
     return (
         <div className="login" >
             <div className="button-login" onClick={toggleLogin}>
+                <em>{props.name}</em>
                 <FontAwesomeIcon icon={faUser} />
             </div>
 
             <Modal isOpen={state.open}>
                 <Button color='secundary' onClick={toggleLogin}>
-                    <FontAwesomeIcon icon={faTimesCircle} />
+                    <FontAwesomeIcon icon={faTimes} />
                 </Button>
 
                 <ModalHeader>Iniciar Sesión</ModalHeader>
@@ -97,16 +104,17 @@ const Login = (props) => {
                     <FormGroup>
                         <Label form='email'>Email</Label>
                         <Input type='text' id='user' name='email' onChange={handleState} valid={validationResult.validated && !validationResult.email} invalid={validationResult.validated && validationResult.email} />
+                        <FormFeedback>{validationResult.email}</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label form='password'>Contraseña</Label>
                         <Input type='password' id='password' name='password' onChange={handleState} valid={validationResult.validated && !validationResult.password} invalid={validationResult.validated && validationResult.password} />
+                        <FormFeedback>{validationResult.password}</FormFeedback>
                     </FormGroup>
                 </ModalBody>
                 <ModalFooter>
                     <Button color='danger' ><Register/></Button>
-                    {/* <Button color='info' >GOOGLE LOGIN</Button> */}
-                    <Button color='primary' onClick={sendData}>Entrar</Button>
+                    <Button color='primary' onClick={btnLogin}>Entrar</Button>
                 </ModalFooter>
             </Modal>
 
@@ -117,7 +125,9 @@ const Login = (props) => {
 const mapStateToProps = state => {
     return {
         token: state.userReducer.token,
-        order: state.orderReducer.order
+        order: state.orderReducer.order,
+        isAdmin: state.userReducer.isAdmin,
+        name: state.userReducer.name
     }
 };
 

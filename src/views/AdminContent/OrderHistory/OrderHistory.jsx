@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Collapse, CardBody, Card } from 'reactstrap';
 import classNames from 'classnames';
 
-const Orders = (props) => {
+const History = (props) => {
 
     let history = useHistory();
 
@@ -38,7 +38,7 @@ const Orders = (props) => {
                 return;
             }
 
-            let result = await axios.get(`http://localhost:3001/orders?delivered=0`, { headers: { authorization: token } });
+            let result = await axios.get(`http://localhost:3001/orders?delivered=1`, { headers: { authorization: token } });
 
             setOrders(result.data);
         }
@@ -70,37 +70,6 @@ const Orders = (props) => {
             setOpenIndex(index);
         }
     }
-    const cancelOrder = async (order, index) => {
-
-        let confirmar = window.confirm('¿Seguro que quieres cancelar la orden?');
-        if (!confirmar) {
-            return;
-        };
-        
-        let result = await axios.delete(`http://localhost:3001/orders/${order.id}`, { headers: { authorization: props.token } });
-        
-        if(result.status === 200){
-            let newOrders = [...orders];
-            newOrders.splice(index, 1);
-            setOrders(newOrders);
-        }
-    };
-
-    const deliverOrder = async (order, index) => {
-
-        let confirmar = window.confirm('¿Seguro que quieres entregar la orden?');
-        if (!confirmar) {
-            return;
-        };
-        
-        let result = await axios.put(`http://localhost:3001/orders/${order.id}`, {id: order.id, delivered: true}, { headers: { authorization: props.token } });
-        
-        if(result.status === 200){
-            let newOrders = [...orders];
-            newOrders.splice(index, 1);
-            setOrders(newOrders);
-        }
-    };
 
     const getProductElements = (order) => {
 
@@ -128,7 +97,6 @@ const Orders = (props) => {
                 <div className="order-delivered"><em className="order-title">Estado: </em>{order.delivered ? "Entregada" : "Pendiente"}</div>
                 <div className="order-price"><em className="order-title">Precio Total: </em>{Math.round(order.price, 2)} €</div>
                 <div className="order-button" onClick={() => viewOrder(order, index)}>Ver detalle</div>
-                <div className={classNames("order-cancel order-deliver", {"hidden": order.delivered})} onClick={() => deliverOrder(order, index)}>Entregar</div>   
                 <div className={classNames("order-cancel", {"hidden": order.delivered})} onClick={() => cancelOrder(order, index)}>Cancelar</div>                
                 <Collapse isOpen={openIndex === index}>
                     <Card>
@@ -139,6 +107,22 @@ const Orders = (props) => {
                 </Collapse>
             </div>;
         });
+    };
+
+    const cancelOrder = async (order, index) => {
+
+        let confirmar = window.confirm('¿Seguro que quires cancelar la orden?');
+        if (!confirmar) {
+            return;
+        };
+        
+        let result = await axios.delete(`http://localhost:3001/orders/${order.id}`, { headers: { authorization: props.token } });
+        
+        if(result.status === 200){
+            let newOrders = [...orders];
+            newOrders.splice(index, 1);
+            setOrders(newOrders);
+        }
     };
 
     //ver si esta logeado
@@ -153,7 +137,7 @@ const Orders = (props) => {
 
     return (
         <div className="order-history">
-            <div className="history-title">Ordenes pendientes de entrega</div>
+            <div className="history-title">Historial de compras</div>
             {getOrderElements()}
         </div>
     )
@@ -164,4 +148,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps)(Orders);
+export default connect(mapStateToProps)(History);

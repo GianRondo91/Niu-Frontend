@@ -13,21 +13,10 @@ const History = () => {
                 <p className="phone">960 41 84 90</p>
                 <p className="email">info@niubistro.com</p>
             </div>
-
-            <form action="" className="form-contact">
-                <label htmlFor="">Nombre Completo</label>
-                <input type="text" />
-                <label htmlFor="">Email</label>
-                <input type="text" />
-                <label htmlFor="">Mensaje</label>
-                <textarea id="w3review" name="w3review" rows="4" cols="50">
-                </textarea>
-                <input type="submit" value="ACTUALIZAR DATOS PERSONALES" className="button-update" />
-            </form>
             
             <div className="info">
                 <div className="hours">
-                    Horaru¡io de atención
+                    Horario de atención
                     <p>12:00 - 16:00</p>
                     /
                     <p>20:00 - 23:00</p>

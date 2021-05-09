@@ -4,16 +4,15 @@ import { Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUserEdit, faUtensils, faReceipt, faTrash, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUserEdit, faReceipt, faTrash, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types/userType';
 
-import AdminContent from '../AdminContent/AdminContent';
 import EditAdmin from '../UserContent/UserData/UserData';
 import AddAdmin from '../AdminContent/AddAdmin/AddAdmin';
-import AddProducts from '../AdminContent/AddProduct/AddProduct';
 import Orders from '../AdminContent/Orders/Orders';
+import OrderHistory from '../AdminContent/OrderHistory/OrderHistory';
 
 const AdminProfile = (props) => {
 
@@ -50,8 +49,26 @@ const AdminProfile = (props) => {
 
     useEffect(() => { }, [props.itemCount]);
 
+    const deleteUser = async () => {
+
+        let confirmar = window.confirm('¿Seguro que quieres eliminar el usuario (no hay vuelta atras)?');
+        if (!confirmar) {
+            return;
+        };
+        
+        let result = await axios.delete(`http://localhost:3001/users/${props.userId}`, { headers: { authorization: props.token } });
+        
+        if(result.status === 200){
+            props.dispatch({ type: LOGOUT, payload: {}});
+            
+            setTimeout(() => {
+                history.push('/');
+            }, 200);            
+        }
+    };
+
     //ver si esta logeado
-    if (!props.token) {
+    if (!props.token || !props.isAdmin) {
         setTimeout(() => {
             history.push('/');
         }, 200);
@@ -64,10 +81,16 @@ const AdminProfile = (props) => {
             <div className="profile-panel">
                 <div className="profile-panel-center">
                     <a href="/"><div className="logo"> </div></a>
-                    <div className="user-data button-panel-profile">
+                    <div className="order-history button-panel-profile">
                         <Link to="/admin" className="link">
-                            <FontAwesomeIcon icon={faHome} />
-                            <em className="link">Home</em>
+                            <FontAwesomeIcon icon={faReceipt} />
+                            <em className="link">Pedidos</em>
+                        </Link>
+                    </div>
+                    <div className="order-history button-panel-profile">
+                        <Link to="/admin/history" className="link">
+                            <FontAwesomeIcon icon={faReceipt} />
+                            <em className="link">Historial</em>
                         </Link>
                     </div>
                     <div className="user-data button-panel-profile">
@@ -82,37 +105,25 @@ const AdminProfile = (props) => {
                             <em className="link">Admin</em>
                         </Link>
                     </div>
-                    <div className="shop button-panel-profile">
-                        <Link to="/admin/addProducts" className="link">
-                            <FontAwesomeIcon icon={faUtensils} />
-                            <em className="link">Platos</em>
-                        </Link>
-                        </div>
-                    <div className="order-history button-panel-profile">
-                        <Link to="/admin/orders" className="link">
-                            <FontAwesomeIcon icon={faReceipt} />
-                            <em className="link">Pedidos</em>
-                        </Link>
-                        </div>
-                    <div className="delete-acount">
+                    
+                    <div className="delete-acount" onClick={deleteUser}>
                         <FontAwesomeIcon icon={faTrash} />
                         <em className="link">Eliminar Cuenta</em>
-                        </div>
+                    </div>
                 </div>
             </div>
 
             <div className="profile-content">
                 <Switch>
-                    <Route path='/admin' exact component={AdminContent} />
+                    <Route path='/admin' exact component={Orders} />
                     <Route path='/admin/edit' exact component={EditAdmin} />
                     <Route path='/admin/addAdmin' exact component={AddAdmin} />
-                    <Route path='/admin/addProducts' exact component={AddProducts} />
-                    <Route path='/admin/orders' exact component={Orders} />
+                    <Route path='/admin/history' exact component={OrderHistory} />
                 </Switch>
             </div>
 
             <div className="profile-admin">
-                <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} onClick={logOut}/></div>
+                <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} onClick={logOut} /></div>
                 <div className="profile-admin-panel">
                     <div className="admin-image"></div>
                     <div className="admin-name">{user.name}</div>
@@ -126,7 +137,8 @@ const AdminProfile = (props) => {
 const mapStateToProps = state => {
     return {
         userId: state.userReducer.userId,
-        token: state.userReducer.token
+        token: state.userReducer.token,
+        isAdmin: state.userReducer.isAdmin
     }
 };
 

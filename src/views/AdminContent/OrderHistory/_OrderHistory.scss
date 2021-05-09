@@ -1,0 +1,52 @@
+.order-history{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    //background-color: brown;
+    .history-title{
+        font-size: 24px;
+        font-weight: 500;
+        padding-top: 20px;
+    }
+    .order{
+        //background-color: chocolate;
+        margin-top: 10px;
+        .order-title{
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .order-button,
+        .order-cancel{
+            background-color:cadetblue;
+            color: white;
+            display: inline;
+            font-size: 19px;
+            padding: 10px;
+            border-radius: 10px;
+            position: relative;
+            left: 480px;
+            bottom: 23px;
+            cursor: pointer;
+            &:hover{
+                background-color: green;
+            }
+            &.hidden {
+                display:none;
+            }
+        }
+        
+        .order-cancel{
+            margin: 50px;
+        }
+    }
+    .collapse{
+        .card{
+            .card-body{
+                .ticket-order{
+
+                }
+            }
+        }
+    }
+}
+
