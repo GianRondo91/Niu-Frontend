@@ -1,6 +1,6 @@
 .contact {
     width: 90%;
-    margin: 4% auto;
+    margin: 25% auto;
     .contact-title {}
 
     .info {
@@ -17,7 +17,11 @@
         .email {
             margin-bottom: 20px;
         }
-        .hours {}
+        .hours {
+            .title-info{
+                font-weight: 700;
+            }
+        }
         .email {
         }
         p {

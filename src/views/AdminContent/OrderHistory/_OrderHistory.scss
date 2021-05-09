@@ -1,52 +1,24 @@
-.order-history{
-    width: 80%;
-    height: 100%;
-    margin: auto;
-    //background-color: brown;
+.order-history-admin{
+
+}
+
+.order-history-order-admin{
+    width: 100%;
+    padding-left: 50px;
+    overflow: scroll;
     .history-title{
-        font-size: 24px;
-        font-weight: 500;
-        padding-top: 20px;
+        left: 0;
     }
     .order{
-        //background-color: chocolate;
-        margin-top: 10px;
-        .order-title{
-            font-size: 15px;
-            font-weight: 700;
-        }
-        .order-button,
-        .order-cancel{
-            background-color:cadetblue;
-            color: white;
-            display: inline;
-            font-size: 19px;
-            padding: 10px;
-            border-radius: 10px;
+        width: 100%;
+        .order-id{}
+        .order-date{}
+        .order-delivered{}
+        .order-price{}
+        .order-button{}
+        .btn-order-admin{
             position: relative;
-            left: 480px;
-            bottom: 23px;
-            cursor: pointer;
-            &:hover{
-                background-color: green;
-            }
-            &.hidden {
-                display:none;
-            }
-        }
-        
-        .order-cancel{
-            margin: 50px;
-        }
-    }
-    .collapse{
-        .card{
-            .card-body{
-                .ticket-order{
-
-                }
-            }
+            left: 300px;
         }
     }
 }
-

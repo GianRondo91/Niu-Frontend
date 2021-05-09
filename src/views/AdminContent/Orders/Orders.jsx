@@ -127,9 +127,9 @@ const Orders = (props) => {
                 <div className="order-date"><em className="order-title">Fecha de pedido: </em>{order.createdAt}</div>
                 <div className="order-delivered"><em className="order-title">Estado: </em>{order.delivered ? "Entregada" : "Pendiente"}</div>
                 <div className="order-price"><em className="order-title">Precio Total: </em>{Math.round(order.price, 2)} €</div>
-                <div className="order-button" onClick={() => viewOrder(order, index)}>Ver detalle</div>
-                <div className={classNames("order-cancel order-deliver", {"hidden": order.delivered})} onClick={() => deliverOrder(order, index)}>Entregar</div>   
-                <div className={classNames("order-cancel", {"hidden": order.delivered})} onClick={() => cancelOrder(order, index)}>Cancelar</div>                
+                <div className="order-button btn-order-admin" onClick={() => viewOrder(order, index)}>Ver detalle</div>
+                <div className={classNames("order-cancel order-deliver btn-order-admin", {"hidden": order.delivered})} onClick={() => deliverOrder(order, index)}>Entregar</div>   
+                <div className={classNames("order-cancel btn-order-admin", {"hidden": order.delivered})} onClick={() => cancelOrder(order, index)}>Cancelar</div>                
                 <Collapse isOpen={openIndex === index}>
                     <Card>
                         <CardBody>
@@ -152,7 +152,7 @@ const Orders = (props) => {
 
 
     return (
-        <div className="order-history">
+        <div className="order-history order-history-order-admin">
             <div className="history-title">Ordenes pendientes de entrega</div>
             {getOrderElements()}
         </div>

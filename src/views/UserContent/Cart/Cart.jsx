@@ -61,14 +61,14 @@ const Cart = (props) => {
 
     if(!props.order.products || !props.order.products.length){
         return <div className="cart">
-                <span>Oops, parece que no tienes elementos en el carrito.</span>
+                <span className="cart-msg">Oops, parece que no tienes elementos en el carrito.</span>
             </div>
     }
 
     return (
         <div className="cart">
+            <div className="info-title"> Detalle del pedido</div>
             <div className="ticket">
-                <div className="info-title"> Detalle del pedido</div>
                 <div className="ticket-info">
                     <div className="info-lef">
                         <div className="number-order"><em>Numero de Pedido: </em>5151515151</div>
@@ -83,12 +83,12 @@ const Cart = (props) => {
                     {getProductElements()}
                 </div>
                 <hr/>
-                <div className="ticket-buttons">
+            </div>
+            <div className="ticket-buttons">
                     <div className="total"><em>Total </em>{Math.round(props.order.price,2)} €</div>
                     <div className="cancel" onClick={cancelOrder}>Cancelar Orden</div>
                     <div className="code-generate" onClick={saveOrder} >Generar código del Pedido</div>
                 </div>
-            </div>
         </div>
     )
 };
