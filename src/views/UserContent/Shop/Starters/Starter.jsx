@@ -9,6 +9,11 @@ const Starter = (props) => {
     };
 
     const getProductElements = () => {
+
+        if(!props.products){
+            return null;
+        }
+
         let elements = [];
 
         for (let product of props.products){
