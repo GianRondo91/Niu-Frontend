@@ -81,34 +81,33 @@ const AdminProfile = (props) => {
             <div className="profile-panel">
                 <div className="profile-panel-center">
                     <a href="/"><div className="logo"> </div></a>
-                    <div className="order-history button-panel-profile">
                         <Link to="/admin" className="link">
+                        <div className="order-history button-panel-profile">
                             <FontAwesomeIcon icon={faReceipt} />
-                            <em className="link">Pedidos</em>
+                            <em className="link-em">Pedidos</em>
+                            </div>
                         </Link>
-                    </div>
-                    <div className="order-history button-panel-profile">
                         <Link to="/admin/history" className="link">
+                        <div className="order-history button-panel-profile">
                             <FontAwesomeIcon icon={faReceipt} />
-                            <em className="link">Historial</em>
+                            <em className="link-em">Historial</em>
+                            </div>
                         </Link>
-                    </div>
-                    <div className="user-data button-panel-profile">
                         <Link to="/admin/edit" className="link">
+                            <div className="user-data button-panel-profile">
                             <FontAwesomeIcon icon={faUserEdit} />
-                            <em className="link">Perfil</em>
+                            <em className="link-em">Perfil</em>
+                            </div>
                         </Link>
-                    </div>
-                    <div className="shop button-panel-profile">
                         <Link to="/admin/addAdmin" className="link">
+                        <div className="shop button-panel-profile">
                             <FontAwesomeIcon icon={faUserPlus} />
-                            <em className="link">Admin</em>
+                            <em className="link-em">Admin</em>
+                            </div>
                         </Link>
-                    </div>
-                    
                     <div className="delete-acount" onClick={deleteUser}>
                         <FontAwesomeIcon icon={faTrash} />
-                        <em className="link">Eliminar Cuenta</em>
+                        <em className="link-em">Eliminar Cuenta</em>
                     </div>
                 </div>
             </div>
@@ -121,13 +120,17 @@ const AdminProfile = (props) => {
                     <Route path='/admin/history' exact component={OrderHistory} />
                 </Switch>
             </div>
-
+            
             <div className="profile-admin">
-                <div className="exit"><FontAwesomeIcon icon={faSignOutAlt} onClick={logOut} /></div>
+                <div className="exit">
+                        <FontAwesomeIcon icon={faSignOutAlt} onClick={logOut} />
+                </div>
                 <div className="profile-admin-panel">
+                    <div className="admin-welcome admin-data">Bienvenido</div>
                     <div className="admin-image"></div>
-                    <div className="admin-name">{user.name}</div>
-                    <div className="admin-email">{user.email}</div>
+                    <div className="admin-name admin-data">{user.name} {user.surname1} {user.surname2}</div>
+                    <div className="admin-email admin-data">{user.email}</div>
+                    <div className="admin-phone admin-data">{user.phone}</div>
                 </div>
                 <div className="profile-admin-qr"></div>
             </div>

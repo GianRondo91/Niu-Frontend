@@ -6,7 +6,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUserEdit, faStore, faReceipt, faTrash, faSignOutAlt, faMapMarkedAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types/userType';
 
 import ProfileContent from '../UserContent/ProfileContent';
@@ -57,15 +57,15 @@ const UserProfile = (props) => {
         if (!confirmar) {
             return;
         };
-        
+
         let result = await axios.delete(`https://niubackend.herokuapp.com/users/${props.userId}`, { headers: { authorization: props.token } });
-        
-        if(result.status === 200){
-            props.dispatch({ type: LOGOUT, payload: {}});
-            
+
+        if (result.status === 200) {
+            props.dispatch({ type: LOGOUT, payload: {} });
+
             setTimeout(() => {
                 history.push('/');
-            }, 200);            
+            }, 200);
         }
     };
 
@@ -83,39 +83,40 @@ const UserProfile = (props) => {
             <div className="profile-panel">
                 <div className="profile-panel-center">
                     <a href="/"><div className="logo"> </div></a>
-                    <div className="user-data button-panel-profile">
-                        <Link to="/user" className="link">
+
+                    <Link to="/user" className="link">
+                        <div className="user-data button-panel-profile">
                             <FontAwesomeIcon icon={faHome} />
-                            <em className="link">Home</em>
-                        </Link>
-                    </div>
-                    <div className="user-data button-panel-profile">
-                        <Link to="/user/edit" className="link">
+                            <em className="link-em">Home</em>
+                        </div>
+                    </Link>
+                    <Link to="/user/edit" className="link">
+                        <div className="user-data button-panel-profile">
                             <FontAwesomeIcon icon={faUserEdit} />
-                            <em className="link">Perfil</em>
-                        </Link>
-                    </div>
-                    <div className="shop button-panel-profile">
-                        <Link to="/user/shop/starters" className="link">
+                            <em className="link-em">Perfil</em>
+                        </div>
+                    </Link>
+                    <Link to="/user/shop/starters" className="link">
+                        <div className="shop button-panel-profile">
                             <FontAwesomeIcon icon={faStore} />
-                            <em className="link">Tienda</em>
-                        </Link>
-                    </div>
-                    <div className="order-history button-panel-profile">
-                        <Link to="/user/history" className="link">
+                            <em className="link-em">Tienda</em>
+                        </div>
+                    </Link>
+                    <Link to="/user/history" className="link">
+                        <div className="order-history button-panel-profile">
                             <FontAwesomeIcon icon={faReceipt} />
-                            <em className="link">Historial</em>
-                        </Link>
-                    </div>
-                    <div className="contact button-panel-profile">
-                        <Link to="/user/contact" className="link">
+                            <em className="link-em">Historial</em>
+                        </div>
+                    </Link>
+                    <Link to="/user/contact" className="link">
+                        <div className="contact button-panel-profile">
                             <FontAwesomeIcon icon={faMapMarkedAlt} />
-                            <em className="link">Contacto</em>
-                        </Link>
-                    </div>
+                            <em className="link-em">Contacto</em>
+                        </div>
+                    </Link>
                     <div className="delete-acount" onClick={deleteUser}>
                         <FontAwesomeIcon icon={faTrash} />
-                        <em className="link">Eliminar Cuenta</em>
+                        <em className="link-em">Eliminar Cuenta</em>
                     </div>
                 </div>
             </div>
@@ -127,7 +128,7 @@ const UserProfile = (props) => {
                     <Route path='/user/shop' component={Shop} />
                     <Route path='/user/history' exact component={History} />
                     <Route path='/user/contact' exact component={Contact} />
-                    <Route path='/user/cart' exact component={Cart}/>
+                    <Route path='/user/cart' exact component={Cart} />
                 </Switch>
             </div>
 
@@ -138,12 +139,14 @@ const UserProfile = (props) => {
                     </Link>
                 </div>
                 <div className="exit">
-                    <FontAwesomeIcon icon={faSignOutAlt} onClick={logOut}/>
+                    <FontAwesomeIcon icon={faSignOutAlt} onClick={logOut} />
                 </div>
                 <div className="profile-user-panel">
+                    <div className="user-welcome user-data">Bienvenido</div>
                     <div className="user-image"></div>
-                    <div className="user-name">{user.name}</div>
-                    <div className="user-email">{user.email}</div>
+                    <div className="user-name user-data">{user.name} {user.surname1} {user.surname2}</div>
+                    <div className="user-email user-data">{user.email}</div>
+                    <div className="user-phone user-data">{user.phone}</div>
                 </div>
                 <div className="profile-user-qr"></div>
             </div>

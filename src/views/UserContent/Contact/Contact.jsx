@@ -16,7 +16,7 @@ const History = () => {
             
             <div className="info">
                 <div className="hours">
-                    Horario de atención
+                    <p className="title-info">Horario de atención:</p>
                     <p>12:00 - 16:00</p>
                     /
                     <p>20:00 - 23:00</p>

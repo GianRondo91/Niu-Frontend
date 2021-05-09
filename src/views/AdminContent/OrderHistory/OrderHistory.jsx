@@ -136,7 +136,7 @@ const History = (props) => {
 
 
     return (
-        <div className="order-history">
+        <div className="order-history order-history-admin">
             <div className="history-title">Historial de compras</div>
             {getOrderElements()}
         </div>

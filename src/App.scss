@@ -22,8 +22,8 @@
 @forward './views/UserContent/Shop/FoodDesign.scss';
 @forward './views/UserContent/Cart/Cart.scss';
 
-@forward './views/AdminProfile/AdminProfile.scss';
 @forward './views/AdminContent/Orders/Orders.scss';
+@forward './views/AdminContent/OrderHistory/OrderHistory';
 
 /*RESPONSIVE DESIGN*/
 @forward './scss/media-query/responsive-design.scss';
