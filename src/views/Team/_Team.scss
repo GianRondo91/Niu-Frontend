@@ -5,25 +5,23 @@
     margin-bottom: 100px;
     .partner-one{
         background-image: url('../../images/partner-one.png');
-        background-position-y: -45px;
-        background-position-x: -18px;
+        background-position-y: -120px;
     }
     .partner-two{
         background-image: url('../../images/partner-two.png');
-        background-position-y: -123px;
-        background-position-x: -318px;
+        background-position-y: -200px;
     }
 
     .team-partner{
         width: 45%;
         margin: 5%;
         height: 90%;
-        background-size: cover;
         position: relative;
         display: flex;
         align-items: center;
-        background-attachment: fixed;
-        background-size: contain;
+        background-size: cover;
+        background-repeat: no-repeat;
+        clip-path: polygon(16% 7%, 5% 0, 0 0, 0 100%, 17% 100%, 29% 100%, 77% 100%, 100% 100%, 100% 50%, 100% 20%, 100% 0, 27% 0);
         .team-caption{
             background: white;
             height: 300px;

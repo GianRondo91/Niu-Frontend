@@ -2,7 +2,7 @@
 @use '../../scss/utilities/mixings' as mix;
 
 .header {
-    @include mix.center(nth(var.$medias, 3));
+    @include mix.center(1400px);
     height: nth(var.$hundreds, 1);
     justify-content: space-around;
     display: flex;

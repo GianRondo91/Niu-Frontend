@@ -1,3 +1,6 @@
+@use '../../../scss/utilities/variables' as var;
+@use '../../../scss/utilities/mixings' as mix;
+
 .starter,
 .mainCourse,
 .drink,
@@ -30,13 +33,12 @@
         }
         .product-price{
             position: relative;
-            bottom: 162px;
-            right: 9px;
-            background-color: cadetblue;
-            color: white;
+            bottom: 172px;
+            right: 1px;
+            color: cadetblue;
+            font-weight: 600;
             font-size: 22px;
             width: 34px;
-            border-radius: 19px;
             text-align: center;
         }
         .product-button{

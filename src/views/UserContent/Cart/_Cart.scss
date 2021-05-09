@@ -1,18 +1,27 @@
 .cart {
-    //background-color: blue;
-    height: 100%;
-    display: flex;
+    width: 100%;
+    height: 90%;
+    display: grid;
+    .cart-msg{
+        width: auto;
+        margin: auto;
+        font-size: 20px;
+    }
+    .info-title {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        position: relative;
+        left: 95px;
+    }
     .ticket {
-        width: 60%;
+        overflow: scroll;
+        width: 80%;
         height: 600px;
         margin: auto;
-        .info-title {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
         .ticket-info {
             display: flex;
+            
             .info-lef {
                 .number-order,
                 .takeaway {
@@ -72,31 +81,33 @@
                 }
             }
         }
-        .ticket-buttons {
-            
-            .total {
-                float: right;
-                font-size: 24px;
-                em {
-                    font-size: 20px;
-                    font-weight: 500;
-                    position: relative;
-                    right: 30px;
-                }
+    }
+    .ticket-buttons {
+        position: relative;
+        .total {
+            float: right;
+            font-size: 24px;
+            position: relative;
+            right: 140px;
+            em {
+                font-size: 20px;
+                font-weight: 500;
+                right: 30px;
             }
-            .cancel,
-            .code-generate {
-                position: relative;
-            }
-
-            .cancel{
-                top: 90px;
-            }
-            .code-generate {
-                float: right;
-                top: 60px;
-                left: 60px;
-            }
+        }
+        .cancel,
+        .code-generate {
+        }
+        .cancel{
+            position: relative;
+            top: 60px;
+            left: 220px;
+        }
+        .code-generate {
+            float: right;
+            top: 34px;
+            right: 120px;
+            position: relative;
         }
     }
 }

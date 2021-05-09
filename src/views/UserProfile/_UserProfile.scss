@@ -1,3 +1,6 @@
+@use '../../scss/utilities/variables' as var;
+@use '../../scss/utilities/mixings' as mix;
+
 .profile {
     display: flex;
     width: 1440px;
@@ -6,9 +9,9 @@
     margin-right: auto;
     .profile-panel {
         width: 10%;
-        ;
         .profile-panel-center {
-            margin: 10px;
+            margin: auto;
+            width: 80%;
             .logo {
                 background-image: url('../../images/logo.png');
                 width: 80px;
@@ -16,27 +19,26 @@
                 margin: 0px auto 70px auto;
                 background-size: 100%;
             }
-            .button-panel-profile {
-                width: 90%;
-                margin: 60px auto;
-                border-radius: 8px;
-                text-align: left;
-                cursor: pointer;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                &:hover {
-                    background-color: cadetblue;
-                    color: white;
-                    em,
-                    a {
-                        color: white;
-                    }
-                }
-            }
             .link {
-                margin-left: 8px;
                 color: black;
                 text-decoration: none;
+                align-items: center;
+                .button-panel-profile {
+                    width: auto;
+                    margin: 60px auto;
+                    border-radius: 8px;
+                    text-align: left;
+                    cursor: pointer;
+                    padding: 5px;
+                    &:hover {
+                        background-color: nth(var.$grey, 2);
+                        //background-color: cadetblue;
+                        color: white;
+                    }
+                    .link-em{
+                        margin-left: 18px;
+                    }
+                }
             }
             .delete-acount {
                 text-align: center;
@@ -52,13 +54,11 @@
     }
     .profile-content {
         width: 70%;
-        //background-color: cornflowerblue;
     }
     .profile-user,
     .profile-admin {
         width: 20%;
-        //background-color: #E6EEEC;
-        background-color: cadetblue;
+        background-color: nth(var.$grey, 2);
         border-radius: 20px;
         .cartShop {
             position: relative;
@@ -100,14 +100,14 @@
                 height: 80px;
                 background-size: 120px;
             }
-            .user-name,
-            .user-email,
-            .admin-name,
-            .admin-email {
+            .user-data,
+            .admin-data{
                 width: 200px;
                 margin: 30px auto 30px auto;
                 margin-top: 30px;
                 margin-bottom: 20px;
+                font-size: 18px;
+                font-weight: 500;
                 color: white;
             }
         }
@@ -121,10 +121,9 @@
             background-size: cover;
         }
     }
-    .profile-panel,
-    .profile-content,
-    .profile-user,
-    .profile-admin {
-        margin: 10px;
+    .profile-admin{
+        .exit{
+            top: 20px;
+        }
     }
 }
