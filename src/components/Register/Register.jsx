@@ -92,7 +92,7 @@ const Register = (props) => {
     return (
         <div className="register" >
             <div className="button-register" onClick={toggleRegister}>
-                {/* <FontAwesomeIcon icon={faUser} /> */}REGISTER
+                Registrarse
             </div>
 
             <Modal isOpen={state.open}>

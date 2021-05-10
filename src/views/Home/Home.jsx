@@ -9,7 +9,6 @@ import Header from '../../components/Header/Header';
 import Menu from '../Menu/Menu';
 import Gallery from '../Gallery/Gallery';
 import Team from '../Team/Team';
-import Contact from '../Contact/Contact';
 
 const Home = () => {
 
@@ -33,9 +32,8 @@ const Home = () => {
                 <Menu />
                 <Gallery />
                 <Team />
-                <Contact />
 
-                <div className="home-footer-hour">
+                <div className="home-footer-hour" id="contact">
                     <div className="hour-circle">
                         <div className="hour-content">
                             <div className="hour-icon">
