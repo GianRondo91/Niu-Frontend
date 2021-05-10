@@ -90,7 +90,7 @@ const Menu = () => {
                     </div>
                 </div>
 
-                <div className="Menu-content-right menu-user-content-left">
+                <div className="menu-content-right menu-user-content-left">
                     <div className="food">
                         <div className="food-title">
                             <div className="food-title-food">
