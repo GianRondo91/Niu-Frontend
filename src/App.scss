@@ -8,18 +8,18 @@
 
 /*VIEWS*/
 @forward './views/Home/Home.scss';
-@forward './views/Contact/Contact.scss';
 @forward './views/Menu/Menu.scss';
 @forward './views/Gallery/Gallery.scss';
 @forward './views/Team/Team.scss';
+@forward './views//Blog/Blog.scss';
 
 @forward './views/UserProfile/UserProfile.scss';
 @forward './views/UserContent/ProfileContent.scss';
 @forward './views/UserContent/UserData/UserData.scss';
 @forward './views/UserContent/Shop/Shop.scss';
 @forward './views/UserContent/OrderHistory/OrderHistory.scss';
-@forward './views/UserContent/Contact/Contact.scss';
 @forward './views/UserContent/Shop/FoodDesign.scss';
+@forward './views//UserContent//Contact/Contact';
 @forward './views/UserContent/Cart/Cart.scss';
 
 @forward './views/AdminContent/Orders/Orders.scss';

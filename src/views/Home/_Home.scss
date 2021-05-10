@@ -1,40 +1,37 @@
 @use '../../scss/utilities/variables' as var;
 @use '../../scss/utilities/mixings' as mix;
-
 .home-content {
-    @include mix.center(1440px);
+    @include mix.center(100%);
     height: var.$per-10;
+    margin-top: 150px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     .home-header-picture {
         display: flex;
         margin-top: var.$mp-l + var.$mp-f;
         margin-bottom: var.$mp-l + var.$mp-f;
-        
         .home-picture {
             width: var.$per-4;
-            height: nth(var.$hundreds , 5) + (nth(var.$hundreds , 1) / 2);
+            height: nth(var.$hundreds, 5) + (nth(var.$hundreds, 1) / 2);
             margin: var.$mp-h;
             background-size: cover;
             background-repeat: no-repeat;
             border-radius: 110px 10px 110px 10px;
         }
-        .first-picture{
+        .first-picture {
             background-image: url('../../images/plate1.jpg');
         }
-        .second-picture{
+        .second-picture {
             background-image: url('../../images/plate2.jpg');
-            background-position-y: -82px;
+            //background-position-y: -82px;
         }
-        .third-picture{
+        .third-picture {
             background-image: url('../../images/plate3.jpg');
             background-position-y: -22px;
         }
     }
     .home-body-presentation {
-        
-        @include mix.center(var.$per-10);
-        margin-top: nth(var.$hundreds , 1);
-        margin-bottom: nth(var.$hundreds , 1);
+        margin-top: nth(var.$hundreds, 1);
+        margin-bottom: nth(var.$hundreds, 1);
         display: flex;
         align-items: center;
         .picture-presentation {
@@ -42,7 +39,6 @@
             height: 600px;
             background-image: url('../../images/plate4.jpg');
             margin-left: auto;
-            //background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -58,10 +54,10 @@
     }
     .home-footer-hour {
         background-color: nth(var.$grey, 2);
-        opacity: .6;
+        opacity: .9;
         width: var.$per-10;
         height: 324px;
-        margin-top: 100px;
+        margin-top: 160px;
         margin-bottom: 100px;
         display: flex;
         align-items: center;
@@ -71,7 +67,7 @@
             height: var.$per-9;
             text-align: center;
             clip-path: circle(50% at 50% 50%);
-            .hour-content{
+            .hour-content {
                 margin-top: 10%;
                 .hour-icon {
                     margin-bottom: var.$mp-f;
@@ -85,25 +81,27 @@
                     margin-bottom: var.$mp-f;
                 }
                 .hour-days {
-                    .and{
+                    .and {
                         margin-top: var.$mp-f;
                         margin-bottom: var.$mp-f;
                     }
                 }
             }
-            
         }
+    }
+}
+
+.modal-content {
+    .btn {
+        text-align: end;
+        font-size: 20px;
     }
 }
 
 
 /*----- Escritorio -----*/
 
-@media (min-width: 1199.98px) {
-    // body {
-    //     background: lightblue;
-    // }
-}
+@media (min-width: 1199.98px) {}
 
 
 /*----- Tablet -----*/
@@ -112,19 +110,15 @@
 /*Portrait*/
 
 @media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
-    // body {
-    //     background: orange;
-    // }
-
     .home-content {
-        width: 540px;
         .home-header-picture {
             display: grid;
             margin-top: var.$mp-a;
+            background-position: center;
             .home-picture {
-                width: var.$per-10;
-                height:  nth(var.$hundreds , 4) + var.$mp-l;
-                margin: 10px 0px 10px 0px;
+                width: var.$per-9;
+                height: nth(var.$hundreds, 4) + var.$mp-l;
+                margin: 10px auto 20px auto;
             }
         }
         .home-body-presentation {
@@ -132,22 +126,25 @@
             display: grid;
             margin-bottom: var.$mp-a;
             .picture-presentation {
-                width: 100%;
+                width: 90%;
                 margin-left: auto;
                 margin-right: auto;
             }
             .title-presentation {
                 position: relative;
-                bottom: var.$mp-o;
-                opacity: 0.6;
-                margin-left: 20px;
+                bottom: 96px;
+                opacity: .9;
+                left: 233px;
+                bottom: 168px;
+                text-align: end;
+                color: white;
             }
         }
         .home-footer-hour {
             .hour-circle {
                 width: var.$per-5;
                 height: var.$per-9;
-                .hour-content{
+                .hour-content {
                     margin-top: var.$per-3 / 2;
                 }
             }
@@ -159,29 +156,24 @@
 /*landscape*/
 
 @media (min-width: 991.98px) and (max-width: 1199.98px)and (orientation:landscape) {
-    // body {
-    //     background: blue;
-    // }
-
     .home-content {
-        width: nth(var.$hundreds, 9);
         .home-header-picture {
             .home-picture {
-                width: var.$per-3;
-                height: nth(var.$hundreds , 4) + var.$mp-l;
+                background-position-y: 0px;
+                background-position: center;
             }
+            
         }
         .home-body-presentation {
-            width: var.$per-8;
             .picture-presentation {
-                width: nth(var.$hundreds , 4);
+                width: nth(var.$hundreds, 4);
             }
         }
         .home-footer-hour {
             .hour-circle {
                 width: var.$per-3;
                 height: var.$per-9;
-                .hour-content{
+                .hour-content {
                     margin-top: var.$per-3 / 2;
                 }
             }
@@ -199,32 +191,30 @@
 /*Default*/
 
 @media (max-width: 575.98px)and (orientation:portrait) {
-    // body {
-    //     background: green;
-    // }
-
     .home-content {
-        width: var.$mp-u + var.$size-p;
         .home-header-picture {
             display: grid;
-            margin-top: var.$mp-a;
+            margin-top: 300px;
             .home-picture {
-                width: var.$per-10;
-                height:  nth(var.$hundreds , 4) + var.$mp-l;
-                margin: 10px 0px 10px 0px;
+                width: var.$per-9;
+                height: nth(var.$hundreds, 4) + var.$mp-l;
+                margin: 10px auto 20px auto;
             }
         }
         .home-body-presentation {
-            width: var.$per-10;
+            width: var.$per-8;
+            margin: 200px auto var.$mp-a auto;
             display: grid;
-            margin-bottom: var.$mp-a;
             .picture-presentation {
-                width: var.$mp-u + var.$size-p;
+                width: var.$per-10;
             }
             .title-presentation {
                 position: relative;
-                bottom: var.$mp-o;
-                opacity: 0.6;
+                bottom: 170px;
+                left: 96px;
+                text-align: end;
+                opacity: .9;
+                color: white;
             }
         }
         .home-footer-hour {
@@ -240,14 +230,26 @@
 /*landscape*/
 
 @media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
-    // body {
-    //     background: pink;
-    // }
-
     .home-content {
-        width: 765px;
+        .home-header-picture {
+            .home-picture {
+                background-position-y: 0px;
+                background-position: center;
+            }
+        }
         .home-body-presentation {
-            width: 90%;
+            .picture-presentation {
+                width: 50%;
+            }
+            .title-presentation {
+                width: 200px;
+            }
+        }
+        .home-footer-hour {
+            .hour-circle {
+                width: var.$per-5;
+                height: var.$per-10;
+            }
         }
     }
 }
