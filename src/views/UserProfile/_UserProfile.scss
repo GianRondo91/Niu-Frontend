@@ -43,7 +43,7 @@
             .delete-acount {
                 text-align: center;
                 cursor: pointer;
-                position:absolute;
+                position: absolute;
                 bottom: 20px;
                 left: 5px;
                 width: 170px;
@@ -51,13 +51,13 @@
                 .link:hover {
                     color: red;
                 }
-                .link-em{
+                .link-em {
                     margin-left: 20px;
                 }
             }
         }
     }
-    .profile-content{
+    .profile-content {
         width: 70%;
         height: 750px;
         overflow: scroll;
@@ -67,7 +67,6 @@
         width: 20%;
         background-color: nth(var.$grey, 2);
         border-radius: 20px;
-        
         .exit {
             position: absolute;
             right: 20px;
@@ -109,7 +108,8 @@
             }
             .user-data,
             .admin-data {
-                width: auto;;
+                width: auto;
+                ;
                 margin: 30px auto 30px auto;
                 margin-top: 30px;
                 margin-bottom: 20px;
@@ -142,23 +142,13 @@ MEDIA-QUERY
 
 
 /*----- Escritorio -----*/
+
 @media (min-width: 1440.98px) {
-    .profile {
-        background: violet;
-    }
     .profile {
         width: 1440px;
         margin-top: 5%;
         margin-bottom: 5%;
         height: 90%;
-    }
-}
-
-@media (min-width: 1199.98px) and (max-width:1440px) {
-    .profile {
-        //background: red;
-    }
-    .profile {
     }
 }
 
@@ -170,18 +160,21 @@ MEDIA-QUERY
 
 @media (min-width: 576px) and (max-width: 1198.98px) and (orientation:portrait) {
     .profile {
-        background: orange;
-        .profile-panel{
-            .profile-panel-center{
-                .link{
-                    .button-panel-profile{
+        .profile-panel {
+            .profile-panel-center {
+                .logo {
+                    width: 60px;
+                    height: 60px;
+                }
+                .link {
+                    .button-panel-profile {
                         display: grid;
                         text-align: center;
                         padding-left: 0px;
-                        .link-em{
+                        .link-em {
                             margin-left: 0px;
                         }
-                        .svg-inline--fa{
+                        .svg-inline--fa {
                             width: auto;
                             margin: auto;
                         }
@@ -189,12 +182,9 @@ MEDIA-QUERY
                 }
             }
         }
-        .profile-user{
-            .profile-user-panel,
-            .profile-admin-panel{
-            }
+        .profile-user {
             .profile-user-qr,
-            .profile-admin-qr{
+            .profile-admin-qr {
                 width: 60px;
                 height: 60px;
             }
@@ -207,25 +197,23 @@ MEDIA-QUERY
 
 @media (min-width: 991.98px) and (max-width: 1199.98px)and (orientation:landscape) {
     .profile {
-        background: blue;
-        .profile-panel{
-            .profile-panel-center{
-                .link{
-                    .button-panel-profile{
+        .profile-panel {
+            .profile-panel-center {
+                .link {
+                    .button-panel-profile {
                         display: grid;
                         text-align: center;
                         padding-left: 0px;
-                        .link-em{
+                        .link-em {
                             margin-left: 0px;
                         }
-                        .svg-inline--fa{
+                        .svg-inline--fa {
                             width: auto;
                             margin: auto;
                         }
                     }
                 }
             }
-
         }
     }
 }
@@ -241,59 +229,60 @@ MEDIA-QUERY
 
 @media (max-width: 575.98px)and (orientation:portrait) {
     .profile {
-        //background: green;
-        .profile-panel{
-            .profile-panel-center{
-                .logo{
+        .profile-panel {
+            .profile-panel-center {
+                .logo {
                     width: 60px;
                     height: 60px;
                 }
-                .link{
-                    .button-panel-profile{
+                .link {
+                    .button-panel-profile {
                         display: grid;
                         text-align: center;
                         padding-left: 0px;
-                        .link-em{
+                        .link-em {
                             margin-left: 0px;
                         }
-                        .svg-inline--fa{
+                        .svg-inline--fa {
                             width: auto;
                             margin: auto;
                         }
                     }
-                    .btn-home{
+                    .btn-home {
                         background: orange;
                         margin-bottom: 0px;
                     }
                 }
             }
-
         }
-        .profile-user{
-            .exit{
+        .profile-user,
+        .profile-admin {
+            .exit {
                 right: 40px;
             }
             .profile-user-panel,
-            .profile-admin-panel{
+            .profile-admin-panel {
                 margin-top: 160px;
                 margin-bottom: 140px;
-                .user-email{
+                .user-email,
+                .admin-email {
                     display: none;
                 }
-                .cartShop{
+                .cartShop {
                     top: 60px;
                     right: 23px;
                     width: 50px;
                     position: absolute;
                 }
-                .user-image{
+                .user-image,
+                .admin-image {
                     width: 60px;
                     height: 40px;
                     background-size: cover;
                 }
             }
             .profile-user-qr,
-            .profile-admin-qr{
+            .profile-admin-qr {
                 width: 60px;
                 height: 60px;
             }
@@ -307,24 +296,23 @@ MEDIA-QUERY
 @media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
     .profile {
         background: black;
-        .profile-panel{
-            .profile-panel-center{
-                .link{
-                    .button-panel-profile{
+        .profile-panel {
+            .profile-panel-center {
+                .link {
+                    .button-panel-profile {
                         display: grid;
                         text-align: center;
                         padding-left: 0px;
-                        .link-em{
+                        .link-em {
                             margin-left: 0px;
                         }
-                        .svg-inline--fa{
+                        .svg-inline--fa {
                             width: auto;
                             margin: auto;
                         }
                     }
                 }
             }
-
         }
     }
 }
