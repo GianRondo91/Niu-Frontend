@@ -57,7 +57,7 @@ You will also see any lint errors in the console.
 
 </br>
 
-## Dependencies
+## 🔧 Dependencies
 In this project you can use this dependencies using:
 
 ### `npm i`
@@ -82,5 +82,18 @@ In this project you can use this dependencies using:
     "sass": "^1.32.11"
   },
 ```
+## 
 
+## 📌 Future Scope <a name = "future_scope"></a>
+
+In future web updates, more funcionalities will be added. In employee's profile, there will be a component for the web general admin to be able to make changes on it. 
+
+## ⛏️ Git Flow <a name = "gitFlow"></a>
+
+![GitFlow]()
+
+
+## ✍️ Author <a name = "author"></a>
+
+[@gianrondo91](https://github.com/GianRondo91) - Idea & Initial development work
 
