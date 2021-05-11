@@ -1,8 +1,6 @@
-In the project directory, you can run:
-
 <div align="center">
 
-# Project - Rental of Movies and Series
+# Niu Bistro - Frontend
 
 ![image](https://user-images.githubusercontent.com/56218293/117843726-5e713400-b27f-11eb-98bb-9e90f56524a5.gif)
 
@@ -14,15 +12,21 @@ In the project directory, you can run:
 # 
 ## 📝 Table of Contents
 
+- [About this project](#abaut)
 - [Built With](#built)
 - [Getting Started](#started)
 - [Dependencies](#dependencies)
-- [Testing with Postman](#testing)
 - [Prerequisites](#prerequisites)
 - [Start Project](#start-project)
-- [Authors](#authors)
+- [Future scope](#future)
 - [Git Flow](#gitFlow)
+- [Authors](#authors)
+<br/>
 
+## 📄 About this project <a name = "about"></a>
+This website is created for a real place that is located in the valency centre.
+
+Apart from having a main view on the page, you have the option that the user can register and log in and inside he can modify data or place orders with the option of paying on the premises at the time of withdrawing his order.
 
 ## ⛏️ Built With <a name = "built"></a>
 <p align="left"> 
@@ -48,12 +52,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 </br>
 
@@ -86,11 +84,12 @@ In this project you can use this dependencies using:
 
 ## 📌 Future Scope <a name = "future_scope"></a>
 
-In future web updates, more funcionalities will be added. In employee's profile, there will be a component for the web general admin to be able to make changes on it. 
+From the design side, improve the responsive design of the website and introduce the logical part of the payment and shipping option.
 
 ## ⛏️ Git Flow <a name = "gitFlow"></a>
 
-![GitFlow]()
+![GitFlow](https://user-images.githubusercontent.com/56218293/117848082-3aafed00-b283-11eb-9c63-ed957aa2105f.png)
+![GitFlow](https://user-images.githubusercontent.com/56218293/117848490-a5f9bf00-b283-11eb-989b-29a2bfab7a59.png)
 
 
 ## ✍️ Author <a name = "author"></a>
