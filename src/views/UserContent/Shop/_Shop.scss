@@ -1,14 +1,13 @@
 @use '../../../scss/utilities/variables' as var;
 @use '../../../scss/utilities/mixings' as mix;
-
-.shop-component{
+.shop-component {
     display: flex;
     width: auto;
     height: 90%;
     flex-direction: column;
-    .shop-panel{
+    .shop-panel {
         display: flex;
-        .button-panel{
+        .button-panel {
             width: auto;
             height: auto;
             margin: 16px auto;
@@ -17,31 +16,129 @@
             text-decoration: none;
             text-align: center;
             color: black;
-            a{
+            a {
                 color: black;
             }
-            .link{
+            .link {
                 margin-left: 20px;
                 color: black;
                 text-decoration: none;
             }
-            &:hover{
+            &:hover {
                 border-radius: 10px;
                 background-color: nth(var.$grey, 2);
                 //background-color: cadetblue;
                 color: white;
                 em,
-                a{
+                a {
                     color: white;
                     text-decoration: none;
                 }
             }
         }
     }
-    .shop-content{
+    .shop-content {
         //width: 90%;
         width: 100%;
         height: 100%;
         border-radius: 10px;
+    }
+}
+
+
+/**
+MEDIA-QUERY
+**/
+
+
+/*----- Escritorio -----*/
+
+@media (min-width: 1199.98px) {
+    body {
+        background: red;
+    }
+}
+
+
+/*----- Tablet -----*/
+
+
+/*Portrait*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
+    body {
+        background: orange;
+    }
+}
+
+
+/*landscape*/
+
+@media (min-width: 991.98px) and (max-width: 1199.98px)and (orientation:landscape) {
+    body {
+        background: blue;
+    }
+}
+
+
+/*----- movil -----*/
+
+
+/*Portrait*/
+
+
+/*Default*/
+
+@media (max-width: 575.98px)and (orientation:portrait) {
+    body {
+        background: green;
+    }
+    .shop-component {
+        .shop-panel {
+            position: absolute;
+            .button-panel {
+                margin: auto;
+                position: relative;
+                right: 76px;
+                top: 80px;
+                padding: 0px;
+                width: 50px;
+                margin-left: 30px;
+                &:hover {
+                    border-radius: 0px;
+                    background-color: white;
+                    color: black;
+                    em,
+                    a {
+                        color: nth(var.$grey, 2);
+                        ;
+                        text-decoration: none;
+                    }
+                }
+                a {
+                    .link {
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
+        .shop-content {
+            margin-top: 160px;
+            height: 90%;
+            .product {
+                width: 50%;
+                height: 10%;
+                margin: 20% 26% 40% 26%;
+            }
+        }
+    }
+}
+
+
+/*landscape*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+    body {
+        background: black;
     }
 }

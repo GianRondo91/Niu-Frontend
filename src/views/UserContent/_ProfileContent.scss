@@ -1,14 +1,94 @@
-
-.profile-component {
-    .menu-user {
-        height: 644px;
-        .menu-user-title {}
+.profile {
+    .profile-content {
+        .profile-component {
+            .menu-user {
+                height: 60%;
+                margin-top: 0px;
+                .menu-user-title {}
+            }
+            .menu-user-content {
+                .menu-user-content-left,
+                .menu-user-content-right {
+                    width: 50%;
+                    padding-left: 30px;
+                }
+            }
+        }
     }
-    .menu-user-content{
-        .menu-user-content-left,
-        .menu-user-content-right{
-            width: 50%;
-            padding-left: 30px;
+}
+
+// /**
+// MEDIA-QUERY
+// **/
+// /*----- Escritorio -----*/
+// @media (min-width: 1199.98px) {
+//     .profile {
+//     background: red;
+//     }
+//     }
+//     /*----- Tablet -----*/
+//     /*Portrait*/
+//     @media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
+//     .profile {
+//     background: orange;
+//     }
+//     }
+//     /*landscape*/
+//     @media (min-width: 991.98px) and (max-width: 1199.98px)and (orientation:landscape) {
+//     .profile {
+//     background: blue;
+//     }
+//     }
+/*----- movil -----*/
+/*Portrait*/
+/*Default*/
+@media (max-width: 575.98px)and (orientation:portrait) {
+.profile {
+//background: green;
+.user-data{
+    .data-title{
+        left: 50px;
+        width: 80px;
+        margin-bottom: 40px;
+    }
+    .form-data{
+        display: contents;
+        .form-data-center{
+            display: contents;
+            .form-data-left,
+            .form-data-right{
+                width: 240px;
+                margin: auto;
+            }
+        }
+        .button-update{
+            width: 80%;
+            font-size: 16px;
+            display: block;
+        }
+    }
+}
+}
+}
+
+/*landscape*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+    .profile {
+        //background: black;
+        .profile-content {
+            .profile-component {
+                .menu-user {
+                    .menu-user-title {
+                        padding-top: 20px;
+                    }
+                }
+                .menu-user-content {
+                    .menu-user-content-left,
+                    .menu-user-content-right {}
+                }
+            }
+            
         }
     }
 }
