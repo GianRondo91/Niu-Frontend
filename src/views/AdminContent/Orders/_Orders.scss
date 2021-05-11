@@ -1,0 +1,78 @@
+/**
+MEDIA-QUERY
+**/
+
+/*----- Tablet -----*/
+
+
+/*Portrait*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
+    .order-history-order-admin{
+        width: 80%;
+        .order {
+            width: 100%;
+            margin-bottom: 30px;
+            display: contents;
+            .order-price {
+                margin-bottom: 16px;
+            }
+            .order-button,
+            .order-cancel,
+            .delivered,
+            .order-price {
+                position: static;
+                bottom: 0px;
+                margin: 0px;
+                margin-bottom: 10px;
+            }
+            .btn-order-admin {
+                display: inline;
+                left: 0px !important;
+                width: 120px;
+                text-align: center;
+                margin: auto;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+/*----- movil -----*/
+
+
+/*Portrait*/
+
+
+/*Default*/
+
+@media (max-width: 575.98px)and (orientation:portrait) {
+    .order-history-order-admin{
+        width: 80%;
+        .order {
+            width: 100%;
+            margin-bottom: 30px;
+            display: contents;
+            .order-price {
+                margin-bottom: 16px;
+            }
+            .order-button,
+            .order-cancel,
+            .delivered,
+            .order-price {
+                position: static;
+                bottom: 0px;
+                margin: 0px;
+                margin-bottom: 10px;
+            }
+            .btn-order-admin {
+                display: block;
+                left: 0px !important;
+                width: 120px;
+                text-align: center;
+                margin: auto;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

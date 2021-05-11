@@ -26,6 +26,9 @@
                 margin-left: var.$mp-f;
                 cursor: pointer;
                 height: var.$per-10;
+                &:hover{
+                    border-bottom: 1px solid;
+                }
             }
             .menu-logo {
                 background-image: url('../../images/logo.png');
@@ -34,6 +37,9 @@
                 height: var.$mp-nn;
                 margin-left: var.$mp-n;
                 margin-right: var.$mp-n;
+                &:hover{
+                    border-bottom: none;
+                }
             }
             .ul-li {
                 position: relative;
@@ -52,11 +58,19 @@
         margin-right: 30px;
         .icon-align {
             position: relative;
-            top: var.$size-s;
+            top: 30px;
+            font-size: 20px;
             cursor: pointer;
             float: right;
             &:hover {
                 color: #9CADA4;
+            }
+            .login{
+                .button-login{
+                    .user-name-login{
+                        margin-right: 10px;
+                    }
+                }
             }
         }
     }

@@ -19,7 +19,7 @@ const Cart = (props) => {
             return <div className="ticket-order" key={orderProduct.product.id}>
                 <div className="image-product">Image</div>
                 <div className="name-product">{orderProduct.product.name}</div>
-                <div className="name-product">{orderProduct.product.description}</div>
+                <div className="name-product name-description">{orderProduct.product.description}</div>
                 <div className="count">{orderProduct.count}</div>
                 <div className="price-counts">{orderProduct.product.price * orderProduct.count} €</div>
                 <div className="delete-product" onClick={() => removeProduct(orderProduct)}>x</div>
@@ -70,7 +70,7 @@ const Cart = (props) => {
             <div className="info-title"> Detalle del pedido</div>
             <div className="ticket">
                 <div className="ticket-info">
-                    <div className="info-lef">
+                    <div className="info-left">
                         <div className="number-order"><em>Numero de Pedido: </em>5151515151</div>
                         <div className="takeaway"><em>Método: </em>Retirar en el local</div>
                     </div>
@@ -86,8 +86,8 @@ const Cart = (props) => {
             </div>
             <div className="ticket-buttons">
                     <div className="total"><em>Total </em>{Math.round(props.order.price,2)} €</div>
-                    <div className="cancel" onClick={cancelOrder}>Cancelar Orden</div>
-                    <div className="code-generate" onClick={saveOrder} >Generar código del Pedido</div>
+                    <div className="cancel" onClick={cancelOrder}>Cancelar</div>
+                    <div className="code-generate" onClick={saveOrder} >Comprar</div>
                 </div>
         </div>
     )

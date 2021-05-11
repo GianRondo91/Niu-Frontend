@@ -1,14 +1,116 @@
-
-.profile-component {
-    .menu-user {
-        height: 644px;
-        .menu-user-title {}
+.profile {
+    .profile-content {
+        .profile-component {
+            .menu-user {
+                height: 60%;
+                margin-top: 0px;
+            }
+            .menu-user-content {
+                .menu-user-content-left,
+                .menu-user-content-right {
+                    width: 50%;
+                    padding-left: 30px;
+                }
+            }
+        }
     }
-    .menu-user-content{
-        .menu-user-content-left,
-        .menu-user-content-right{
-            width: 50%;
-            padding-left: 30px;
+}
+
+
+/**
+MEDIA-QUERY
+**/
+
+/*----- Tablet -----*/
+
+
+/*Portrait*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
+    .profile {
+        .user-data {
+            .data-title {
+                left: 50px;
+                width: 80px;
+                margin-bottom: 40px;
+            }
+            .form-data {
+                display: contents;
+                .form-data-center {
+                    display: contents;
+                    .form-data-left,
+                    .form-data-right {
+                        width: 300px;
+                        margin: auto;
+                    }
+                }
+                .button-update {
+                    width: 80%;
+                    font-size: 16px;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+/*----- movil -----*/
+
+
+/*Portrait*/
+
+
+/*Default*/
+
+@media (max-width: 575.98px)and (orientation:portrait) {
+    .profile {
+        .user-data {
+            .data-title {
+                left: 50px;
+                width: 80px;
+                margin-bottom: 40px;
+            }
+            .form-data {
+                display: contents;
+                .form-data-center {
+                    display: contents;
+                    .form-data-left,
+                    .form-data-right {
+                        width: 240px;
+                        margin: auto;
+                    }
+                }
+                .button-update {
+                    width: 80%;
+                    font-size: 16px;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+/*landscape*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+    .profile {
+        .profile-content {
+            width: 100%;
+            .profile-component {
+                .menu-user {
+                    height: 60%;
+                    margin-top: 20%;
+                    .menu-user-title {
+                        padding-top: 20px;
+                    }
+                }
+            }
+            .user-data{
+                .data-title{
+                    left: 18px;
+                }
+            }
         }
     }
 }

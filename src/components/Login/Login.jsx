@@ -89,7 +89,7 @@ const Login = (props) => {
     return (
         <div className="login" >
             <div className="button-login" onClick={toggleLogin}>
-                <em>{props.name}</em>
+                <em className="user-name-login">{props.name}</em>
                 <FontAwesomeIcon icon={faUser} />
             </div>
 
