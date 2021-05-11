@@ -25,9 +25,10 @@
                 margin-bottom: 20px;
                 .food-title {
                     display: flex;
+                    justify-content: space-between;
                     .food-title-price {
                         position: relative;
-                        left: 240px;
+                        padding-right: 70px;
                     }
                 }
                 .food-description {
@@ -84,7 +85,6 @@
 /*Default*/
 
 @media (max-width: 575.98px)and (orientation:portrait) {
-    
     .menu {
         display: none;
     }

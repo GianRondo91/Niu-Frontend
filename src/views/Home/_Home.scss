@@ -22,7 +22,6 @@
         }
         .second-picture {
             background-image: url('../../images/plate2.jpg');
-            //background-position-y: -82px;
         }
         .third-picture {
             background-image: url('../../images/plate3.jpg');
@@ -100,6 +99,15 @@
 
 
 /*----- Escritorio -----*/
+
+@media (min-width: 1400px){
+    .home-content,
+    .home-body-presentation,
+    .home-footer-hour {
+        max-width: 1800px;
+    }
+    
+}
 
 @media (min-width: 1199.98px) {}
 

@@ -1,24 +1,18 @@
-.order-history-admin{
-
-}
-
 .order-history-order-admin{
-    width: 100%;
+    width: auto;
     padding-left: 50px;
     overflow: scroll;
     .history-title{
+        width: auto;
         left: 0;
     }
-    .order{
+    .order-admin{
         width: 100%;
-        .order-id{}
-        .order-date{}
-        .order-delivered{}
-        .order-price{}
-        .order-button{}
+        margin: auto;
         .btn-order-admin{
             position: relative;
-            left: 300px;
+            left: 220px;
+            margin-left: 0px;
         }
     }
 }

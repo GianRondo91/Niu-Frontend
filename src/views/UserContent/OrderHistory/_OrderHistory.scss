@@ -1,28 +1,28 @@
-.order-history{
-    width: 100%;
+.order-history {
+    width: 80%;
     height: 100%;
     margin: auto;
     overflow: scroll;
-    .history-title{
+    .history-title {
         width: 300px;
         font-size: 24px;
         font-weight: 500;
         padding-top: 20px;
         position: relative;
-        left: 98px;
+        left: 0px;
         margin-bottom: 20px;
     }
-    .order{
+    .order {
         margin-top: 10px;
-        width: 800px;
+        width: auto;
         margin: auto;
-        .order-title{
+        .order-title {
             font-size: 15px;
             font-weight: 700;
         }
         .order-button,
-        .order-cancel{
-            background-color:cadetblue;
+        .order-cancel {
+            background-color: cadetblue;
             color: white;
             display: inline;
             font-size: 19px;
@@ -33,25 +33,117 @@
             bottom: 23px;
             cursor: pointer;
             margin: 50px;
-            &:hover{
+            &:hover {
                 background-color: green;
             }
             &.hidden {
-                display:none;
+                display: none;
             }
         }
     }
-    .collapse{
-        .card{
+    .collapse {
+        .card {
             margin-bottom: 20px;
-            .card-body{
+            .card-body {
                 height: 100%;
                 overflow: scroll;
-                .ticket-order{
-
-                }
             }
         }
     }
 }
 
+
+/*----- Tablet -----*/
+
+
+/*Portrait*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait) {
+    .order-history {
+        width: 80%;
+        .history-title {
+            width: 220px;
+            left: 10px;
+        }
+        .order {
+            width: 100%;
+            margin-bottom: 30px;
+            .order-price {
+                margin-bottom: 16px;
+            }
+            .order-button,
+            .order-cancel {
+                position: static;
+                bottom: 0px;
+                margin: 0px;
+            }
+            .order-cancel {
+                margin-left: 16px;
+            }
+        }
+    }
+}
+
+
+/*----- movil -----*/
+
+
+/*Portrait*/
+
+
+/*Default*/
+
+@media (max-width: 575.98px)and (orientation:portrait) {
+    .order-history {
+        width: 80%;
+        .history-title {
+            width: 220px;
+            left: 10px;
+        }
+        .order {
+            width: 100%;
+            margin-bottom: 30px;
+            .order-price {
+                margin-bottom: 16px;
+            }
+            .order-button,
+            .order-cancel {
+                position: static;
+                bottom: 0px;
+                margin: 0px;
+            }
+            .order-cancel {
+                margin-left: 16px;
+            }
+        }
+    }
+}
+
+
+/*landscape*/
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+    .order-history {
+        width: 80%;
+        .history-title {
+            width: 220px;
+            left: 10px;
+        }
+        .order {
+            width: 100%;
+            margin-bottom: 30px;
+            .order-price {
+                margin-bottom: 16px;
+            }
+            .order-button,
+            .order-cancel {
+                position: static;
+                bottom: 0px;
+                margin: 0px;
+            }
+            .order-cancel {
+                margin-left: 16px;
+            }
+        }
+    }
+}

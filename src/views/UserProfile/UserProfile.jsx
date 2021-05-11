@@ -85,7 +85,7 @@ const UserProfile = (props) => {
                     <a href="/"><div className="logo"> </div></a>
 
                     <Link to="/user" className="link">
-                        <div className="user-data button-panel-profile">
+                        <div className="user-data button-panel-profile btn-home">
                             <FontAwesomeIcon icon={faHome} />
                             <em className="link-em">Home</em>
                         </div>
@@ -133,15 +133,15 @@ const UserProfile = (props) => {
             </div>
 
             <div className="profile-user">
-                <div className="cartShop">
-                    <Link to="/user/cart">
-                        <FontAwesomeIcon icon={faShoppingCart} />{props.itemCount}
-                    </Link>
-                </div>
                 <div className="exit">
                     <FontAwesomeIcon icon={faSignOutAlt} onClick={logOut} />
                 </div>
                 <div className="profile-user-panel">
+                    <div className="cartShop">
+                        <Link to="/user/cart">
+                            <FontAwesomeIcon icon={faShoppingCart} />{props.itemCount}
+                        </Link>
+                    </div>
                     <div className="user-welcome user-data">Bienvenido</div>
                     <div className="user-image"></div>
                     <div className="user-name user-data">{user.name} {user.surname1} {user.surname2}</div>

@@ -122,7 +122,7 @@ const Orders = (props) => {
     const getOrderElements = () => {
 
         return orders.map((order, index) => {
-            return <div key={order.id} className={classNames("order", {"delivered": order.delivered})}>
+            return <div key={order.id} className={classNames("order order-admin", {"delivered": order.delivered})}>
                 <div className="order-id"><em className="order-title">Id: </em>{order.id}</div>
                 <div className="order-date"><em className="order-title">Fecha de pedido: </em>{order.createdAt}</div>
                 <div className="order-delivered"><em className="order-title">Estado: </em>{order.delivered ? "Entregada" : "Pendiente"}</div>
