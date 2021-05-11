@@ -3,8 +3,8 @@
 .home-content {
     @include mix.center(100%);
     height: var.$per-10;
-    margin-top: 150px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: var.$mp-q - var.$mp-f;
+    font-family: var.$font-family;
     .home-header-picture {
         display: flex;
         margin-top: var.$mp-l + var.$mp-f;
@@ -15,7 +15,7 @@
             margin: var.$mp-h;
             background-size: cover;
             background-repeat: no-repeat;
-            border-radius: 110px 10px 110px 10px;
+            border-radius: nth(var.$hundreds, 1) var.$mp-f nth(var.$hundreds, 1) var.$mp-f;
         }
         .first-picture {
             background-image: url('../../images/plate1.jpg');
@@ -34,14 +34,14 @@
         display: flex;
         align-items: center;
         .picture-presentation {
-            width: 600px;
-            height: 600px;
+            width: nth(var.$hundreds, 6);
+            height: nth(var.$hundreds, 6);
             background-image: url('../../images/plate4.jpg');
             margin-left: auto;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            border-radius: 10px 100px 10px 300px;
+            border-radius: var.$mp-f nth(var.$hundreds, 1) var.$mp-f nth(var.$hundreds, 3);
         }
         .title-presentation {
             font-size: var.$size-p;
@@ -55,9 +55,9 @@
         background-color: nth(var.$grey, 2);
         opacity: .9;
         width: var.$per-10;
-        height: 324px;
-        margin-top: 160px;
-        margin-bottom: 100px;
+        height: var.$mp-u + var.$mp-c;
+        margin-top: var.$mp-q;
+        margin-bottom: nth(var.$hundreds, 1);
         display: flex;
         align-items: center;
         .hour-circle {
@@ -67,7 +67,7 @@
             text-align: center;
             clip-path: circle(50% at 50% 50%);
             .hour-content {
-                margin-top: 10%;
+                margin-top: var.$per-1;
                 .hour-icon {
                     margin-bottom: var.$mp-f;
                     font-size: var.$size-k;
@@ -93,7 +93,7 @@
 .modal-content {
     .btn {
         text-align: end;
-        font-size: 20px;
+        font-size: var.$mp-i;
     }
 }
 
@@ -104,13 +104,10 @@
     .home-content,
     .home-body-presentation,
     .home-footer-hour {
-        max-width: 1800px;
+        max-width: nth(var.$hundreds, 10) + nth(var.$hundreds, 8);
     }
     
 }
-
-@media (min-width: 1199.98px) {}
-
 
 /*----- Tablet -----*/
 
@@ -126,7 +123,7 @@
             .home-picture {
                 width: var.$per-9;
                 height: nth(var.$hundreds, 4) + var.$mp-l;
-                margin: 10px auto 20px auto;
+                margin: var.$mp-f auto var.$mp-i auto;
             }
         }
         .home-body-presentation {
@@ -134,18 +131,18 @@
             display: grid;
             margin-bottom: var.$mp-a;
             .picture-presentation {
-                width: 90%;
+                width: var.$per-9;
                 margin-left: auto;
                 margin-right: auto;
             }
             .title-presentation {
                 position: relative;
-                bottom: 96px;
+                bottom: var.$mp-o;
                 opacity: .9;
-                left: 233px;
-                bottom: 168px;
+                left: nth(var.$hundreds, 2) + var.$mp-k;
+                bottom: var.$mp-q + var.$mp-e;
                 text-align: end;
-                color: white;
+                color: var.$white;
             }
         }
         .home-footer-hour {
@@ -167,7 +164,7 @@
     .home-content {
         .home-header-picture {
             .home-picture {
-                background-position-y: 0px;
+                background-position-y: var.$mp-a;
                 background-position: center;
             }
             
@@ -202,24 +199,24 @@
     .home-content {
         .home-header-picture {
             display: grid;
-            margin-top: 300px;
+            margin-top: nth(var.$hundreds, 3);
             .home-picture {
                 width: var.$per-9;
                 height: nth(var.$hundreds, 4) + var.$mp-l;
-                margin: 10px auto 20px auto;
+                margin: var.$mp-f auto var.$mp-i auto;
             }
         }
         .home-body-presentation {
             width: var.$per-8;
-            margin: 200px auto var.$mp-a auto;
+            margin: nth(var.$hundreds, 2) auto var.$mp-a auto;
             display: grid;
             .picture-presentation {
                 width: var.$per-10;
             }
             .title-presentation {
                 position: relative;
-                bottom: 170px;
-                left: 96px;
+                bottom: var.$mp-q + var.$mp-f;
+                left: var.$mp-o;
                 text-align: end;
                 opacity: .9;
                 color: white;
@@ -241,16 +238,16 @@
     .home-content {
         .home-header-picture {
             .home-picture {
-                background-position-y: 0px;
+                background-position-y: var.$mp-a;
                 background-position: center;
             }
         }
         .home-body-presentation {
             .picture-presentation {
-                width: 50%;
+                width: var.$per-5;
             }
             .title-presentation {
-                width: 200px;
+                width: nth(var.$hundreds, 2);
             }
         }
         .home-footer-hour {

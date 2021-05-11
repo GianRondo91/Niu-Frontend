@@ -12,7 +12,7 @@ const onlyLetters = (inputValue) => {
 };
 
 const onlyNumbers = (inputValue) => {
-    return /^\d*$/.test(inputValue) ? 'Número invalido' : null;
+    return /^\d*$/.test(inputValue) ? null : 'Número invalido';
 };
 
 const isDate = (inputValue) => {

@@ -1,39 +1,39 @@
 @use '../../scss/utilities/variables' as var;
 @use '../../scss/utilities/mixings' as mix;
 .menu {
-    height: 800px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    height: nth(var.$hundreds, 8);
+    margin-top: var.$size-w;
+    margin-bottom: var.$size-w;
     .menu-title {
         text-align: center;
-        font-size: 26px;
-        padding-top: 130px;
+        font-size: var.$size-ñ;
+        padding-top: var.$mp-p + var.$mp-b;
     }
     .menu-content {
         background: white;
         display: flex;
         align-items: center;
-        height: 80%;
+        height: var.$per-8;
         margin: auto;
-        width: 100%;
+        width: var.$per-10;
         justify-content: center;
         .menu-content-left,
         .menu-content-right {
-            width: 40%;
-            padding-left: 70px;
+            width: var.$per-4;
+            padding-left: var.$mp-nn - var.$mp-f;
             .food {
-                margin-bottom: 20px;
+                margin-bottom: var.$mp-i;
                 .food-title {
                     display: flex;
                     justify-content: space-between;
                     .food-title-price {
                         position: relative;
-                        padding-right: 70px;
+                        padding-right: var.$size-w + var.$size-g;
                     }
                 }
                 .food-description {
-                    margin-top: 6px;
-                    font-size: 14px;
+                    margin-top: var.$mp-d;
+                    font-size: var.$size-i;
                 }
             }
         }

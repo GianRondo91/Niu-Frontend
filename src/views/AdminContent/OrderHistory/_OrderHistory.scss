@@ -1,18 +1,20 @@
+@use '../../../scss/utilities/variables' as var;
+@use '../../../scss/utilities/mixings' as mix;
 .order-history-order-admin{
     width: auto;
-    padding-left: 50px;
+    padding-left: var.$size-v;
     overflow: scroll;
     .history-title{
         width: auto;
-        left: 0;
+        left: var.$zero;
     }
     .order-admin{
-        width: 100%;
+        width: var.$per-10;
         margin: auto;
         .btn-order-admin{
             position: relative;
-            left: 220px;
-            margin-left: 0px;
+            left: var.$mp-s - var.$mp-c;
+            margin-left: var.$mp-a;
         }
     }
 }

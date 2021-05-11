@@ -1,49 +1,32 @@
+//@use './variables' as var;
+// @use '../../scss/utilities/mixings' as mix;
 @mixin principal-button($firstColor, $secondColor, $thirdColor) {
     background: linear-gradient(to bottom, $firstColor 5%, $thirdColor 100%);
     background-color: $firstColor;
-    border-radius: $size-d;
-    border: $size-0 solid $secondColor;
+    border-radius: 4px;
+    border: 0px solid $secondColor;
     display: inline-block;
     cursor: pointer;
-    font-size: $size-j;
+    font-size: 16px;
     font-weight: bold;
-    padding: $size-b $mp-f;
+    padding: 1px 8px;
     text-decoration: none;
-    margin: $mp-g;
+    margin: 12px;
 }
 
 
 @mixin alternative-button($firstColor, $secondColor) {
-    border-radius: $size-a;
-    border: $size-0 solid $secondColor;
+    border-radius: 4px;
+    border: 0px solid $secondColor;
     display: inline-block;
     cursor: pointer;
-    font-size: $size-g;
+    font-size: 10px;
     font-weight: bold;
-    padding: $size-b $mp-f;
+    padding: 1px 8px;
     text-decoration: none;
-    margin: $mp-e;
+    margin: 6px;
 }
 
-@mixin input($bk-color, $text-color) {
-    width: $per-10;
-    height: $mp-k;
-    background-color: $bk-color;
-    color: $text-color;
-    border-radius: $size-c;
-    border: $size-a solid $bk-color;
-    font-size: $size-j;
-}
-
-@mixin input-security($width) {
-    width: $width;
-    margin-top: $mp-c - $size-a;
-    margin-bottom: $mp-h;
-    font-size: $mp-g;
-    border-radius: $mp-e;
-    outline: none;
-    border: none;
-}
 
 @mixin center ($width){
     width: $width;

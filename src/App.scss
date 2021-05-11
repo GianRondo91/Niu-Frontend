@@ -1,5 +1,6 @@
 /*BASE*/
 @forward './scss/base/reset.scss';
+//@forward './scss/utilities/mixings';
 
 /*COMPONENTS*/
 @forward './components/Header/Header.scss';
@@ -14,7 +15,7 @@
 @forward './views//Blog/Blog.scss';
 
 @forward './views/UserProfile/UserProfile.scss';
-@forward './views/UserContent/ProfileContent.scss';
+@forward './views/UserContent/ProfileContent';
 @forward './views/UserContent/UserData/UserData.scss';
 @forward './views/UserContent/Shop/Shop.scss';
 @forward './views/UserContent/OrderHistory/OrderHistory.scss';
@@ -24,6 +25,3 @@
 
 @forward './views/AdminContent/Orders/Orders.scss';
 @forward './views/AdminContent/OrderHistory/OrderHistory';
-
-/*RESPONSIVE DESIGN*/
-@forward './scss/media-query/responsive-design.scss';

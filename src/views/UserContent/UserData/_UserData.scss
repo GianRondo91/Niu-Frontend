@@ -1,3 +1,5 @@
+@use '../../../scss/utilities/variables' as var;
+@use '../../../scss/utilities/mixings' as mix;
 .user-data {
     .data-title {
         margin-top: 20px;
@@ -34,6 +36,8 @@
             }
         }
         .button-update {
+            @include mix.principal-button(nth(var.$btnBlue, 1), nth(var.$btnBlue, 2), nth(var.$btnBlue, 3));
+            color: white;
             width: 320px;
             margin: 46px auto 60px auto;
         }

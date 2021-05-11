@@ -2,26 +2,26 @@
 @use '../../scss/utilities/mixings' as mix;
 .gallery{
     background-image: url('https://user-images.githubusercontent.com/56218293/117150201-3897eb00-adb8-11eb-9acd-c8d2c61ba837.png');
-    width: 100%;
-    margin-top: 50px;
+    width: var.$per-10;
+    margin-top: var.$size-v;
     background-repeat: no-repeat;
     background-position: center;
-    height: 800px;
+    height: nth(var.$hundreds, 8);
     background-attachment: fixed;
     background-size: cover;
     .gallery-caption{
-        width: 600px;
+        width: nth(var.$hundreds, 6);
         height: auto;
-        font-size: 30px;
+        font-size: var.$size-p;
         font-family: cursive;
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        top: 500px;
-        color: white;
+        top: nth(var.$hundreds, 5);
+        color: var.$white;
         text-align: center;
         filter: alpha(opacity=60);
-        filter: drop-shadow(2px 4px 6px black);
+        filter: drop-shadow(var.$mp-b var.$mp-c var.$mp-d var.$black);
     }
 }
 
@@ -39,7 +39,7 @@
 
     .gallery{
         .gallery-caption{
-            width: 400px;
+            width: nth(var.$hundreds, 4);
         }
     }
 }

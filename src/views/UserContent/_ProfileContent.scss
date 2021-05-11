@@ -1,3 +1,5 @@
+@use '../../scss/utilities/variables' as var;
+@use '../../scss/utilities/mixings' as mix;
 .profile {
     .profile-content {
         .profile-component {
@@ -45,9 +47,11 @@ MEDIA-QUERY
                     }
                 }
                 .button-update {
-                    width: 80%;
-                    font-size: 16px;
+                    @include mix.principal-button(nth(var.$btnBlue, 1), nth(var.$btnBlue, 2), nth(var.$btnBlue, 3));
                     display: block;
+                    width: 80%;
+                    //font-size: 16px;
+                    
                 }
             }
         }

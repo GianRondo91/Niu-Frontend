@@ -42,17 +42,13 @@
             text-align: center;
         }
         .product-button{
+            @include mix.principal-button(nth(var.$btnBlue, 1), nth(var.$btnBlue, 2), nth(var.$btnBlue, 3));
+            width: 100%;
+            color: white;
             text-align: center;
-            background-color: cadetblue;
-            border-radius: 5px;
-            padding: 4px;
-            cursor: pointer;
             position: relative;
+            margin-left: 0;
             bottom: 30px;
-            &:hover{
-                background-color: #028B4B;
-                color: white;
-            }
         }
     }
 }
