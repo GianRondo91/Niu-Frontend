@@ -81,7 +81,7 @@ const AddAdmin = (props) => {
 
     return (
         <div className="user-data">
-            <div className="data-title">AGREGAR NUEVO ADMINISTRADOR</div>
+            <div className="data-title">CREAR NUEVO ADMINISTRADOR</div>
             <form action="" className="form-data">
                 <div className="form-data-center">
                 <div className="form-data-left">
